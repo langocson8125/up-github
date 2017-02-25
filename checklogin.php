@@ -6,7 +6,7 @@ mysqli_select_db($connect,'langocsonwp') or die('Cannot select DB');
 $id = $_POST['id'];
 $pass = $_POST['pass'];
 
-$sql = "'SELECT * FROM news WHERE id='$id' and password='$pass'";
+$sql = "SELECT * FROM news WHERE id='$id' and password='$pass";
 
 $result=mysqli_query($sql);
 $count=mysqli_num_rows($result);
