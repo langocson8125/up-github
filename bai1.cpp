@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-void getPrime(long long &n, int &count, int arr[]){
+void getPrime(long long n, int &count, int arr[]){
 	for(int i = 2; i <= n; i++){
 		int tmp = 1;
 		for(int j = 2; j < i; j++){
