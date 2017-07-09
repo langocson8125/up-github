@@ -1,0 +1,35 @@
+Lịch trình học Web
+
++ 15/8 học xong JS (QUAN TRỌNG)
++ cuối tháng 15/9 học xong Jquery 
++ đầu tháng 10 học xong HTML HTML5 + CSS + CSS3 ( có cơ bản rồi coi lại nhanh vl)
++ qua học Bootstrap
++ tháng 11 bắt đầu học PHP + Kết hợp MySQL (QUAN TRỌNG)
+
+Trong suốt quá trình vẫn phải cày cái gì đó để có ngôn ngữ riêng + giải thuật tốt (QUAN TRỌNG)
+Chẳng hạn học C + code C + đọc sách giải thuật của Lê Minh Hoàng
+Làm project nào đó bằng C để up lên github (QUAN TRỌNG)
+Khi đi làm chỉ cần show cái link github ra cho mấy thằng tuyển dụng
+
+===>TẤT CẢ NHỮNG CÁI Ở TRÊN: HỌC PHẢI ĐI ĐỔI VỚI HÀNH
+VỪA HỌC VỪA TỰ LÀM CHO MÌNH 1 WEBSITE
+
+SÁCH HTTP thì đợi t sửa xong thì t sẽ phát hành
+
+HK1 đi học thêm CCNA
+Qua tết đi học tiếng anh TOEIC (HK2)
+Linux tự nghiên cứu - nếu giỏi thì rảnh rảnh đọc mấy cái thủ thuật + bảo mật gì đó cho có tí hiểu biết
+
+Link tài liệu:
++ HTML cơ bản: https://freetuts.net/hoc-html/html-can-ban
++ HTML5 cơ bản: https://freetuts.net/hoc-html/html5-can-ban
++ CSS cơ bản: https://freetuts.net/hoc-css/css-can-ban
++ CSS3 cơ bản: https://freetuts.net/hoc-css/css3-can-ban
++ Bootstrap 3: https://freetuts.net/hoc-bootstrap/twitter-bootstrap-3
++ JavaScript: https://freetuts.net/hoc-javascript
++ Jquery cơ bản: https://freetuts.net/hoc-jquery/jquery-can-ban
++ PHP: https://freetuts.net/hoc-php
++ MYSQL cơ bản: https://freetuts.net/hoc-mysql/mysql-can-ban
+
+Một kho thủ thuật tham khảo lập trình web bên W3school
+Còn cái mô hình MVC thì học xong PHP là học cái đó trong vòng 2 tuần là xong :)
