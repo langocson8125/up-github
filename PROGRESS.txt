@@ -30,6 +30,7 @@ Link tài liệu:
 https://www.w3schools.com/bootstrap/default.asp
 
 + JavaScript: https://freetuts.net/hoc-javascript
+( qui trình học trong mục JS cơ bản, ta học phần cơ bản- vòng lặp - data type - object - DOM - EVENT - BOM - bổ sung)
 https://www.w3schools.com/js/default.asp
 
 + Jquery cơ bản: https://freetuts.net/hoc-jquery/jquery-can-ban
