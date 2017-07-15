@@ -42,4 +42,16 @@ https://www.w3schools.com/jquery/default.asp
 
 Một kho thủ thuật tham khảo lập trình web bên W3school
 
-Còn các thứ như github, giter, GG dev tool, extension,cấu trúc dữ liệu và giải thuật, MVC,... đợi sau khi học code xong r học mấy cái đó
+Năm trong đầu cấu trúc dữ liệu và giải thuật
+
+Bonus để chuyển nghiệp hóa khi đi làm
++Chrome DevTools: https://developer.chrome.com/devtools
++Gitbub, Gitter: http://rogerdudler.github.io/git-guide/      https://backlogtool.com/git-guide/vn/     https://thachpham.com/tools/git-gioi-thieu-serie-git-co-ban.html
+
+Chỉ tiêu trước hè năm 2:
++Năm vững JS, PHP
++Làm đc front-end
++Cấu trúc dữ liệu và giải thuật
++Các bonus yêu cầu ở trên
++MVC
++Tiếng anh khá
