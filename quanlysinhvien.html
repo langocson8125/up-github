@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<title>QUẢN LÝ SINH VIÊN</title>
+	<meta charset="utf-8">
+</head>
+<style type="text/css">
+	#btn-add {
+		background-color: green;
+		width: 180px;
+		height: 35px;
+	}
+	#btn-view {
+		background-color: yellow;
+		width: 180px;
+		height: 35px;
+	}
+	#btn-delete {
+		background-color: red;
+		width: 180px;
+		height: 35px;
+	}
+	#btn-edit {
+		background-color: blue;
+		width: 180px;
+		height: 35px;
+	}
+</style>
+<body>
+	<script type="text/javascript">
+	var id = document.querySelectorAll("form input#id");
+	var name = document.querySelectorAll("form input#name");
+	var email = document.querySelectorAll("form input#email");
+		var Student = {
+			Data : [],
+			viewStudent : function(){
+				for(var i = 0; i < this.Data.length; i++){
+					var p1 = document.createElement("p");
+					var p2 = document.createElement("p");
+					var p3 = document.createElement("p");
+
+					var content1 = document.createTextNode("ID: " + this.Data[i].id);
+					var content2 = document.createTextNode("Họ và Tên: " + this.Data[i].name);
+					var content3 = document.createTextNode("Email " + this.Data[i].email);
+
+					p1.appendChild(content1);
+					p2.appendChild(content2);
+					p3.appendChild(content3);
+
+					document.getElementById("view").appendChild(p1);
+					document.getElementById("view").appendChild(p2);
+					document.getElementById("view").appendChild(p3);
+				}
+			},
+			addStudent : function(id, name, email){
+				var info = {
+					id : id,
+					name : name,
+					email : email
+				};
+				this.Data.push(info);
+			},
+			deleteStudent : function(id){
+				for(var i = 0; i < this.Data.length; i++){
+					if(this.Data[i].id === id){
+						this.Data.splice(i, 1);
+					}
+				}
+			},
+			editStudent : function(id, name, email){
+				for(var i = 0; i < this.Data.length; i++){
+					if(this.Data[i].id === id){
+						if((name != "") || this.Data[i].name != name){
+							this.Data[i].name = name;
+						}
+						if((email != "") || this.Data[i].email != email){
+							this.Data[i].email = email;
+						}						
+					}
+					else{
+						alert("Không tìm thấy sinh viên có id là: " + id);
+					}
+				}
+			}
+		};
+
+		document.getElementById("btn-add").addEventListener("click", function(){
+			Student.addStudent(id[0], name[0], email[0]);
+		});
+
+		document.getElementById("btn-delete").addEventListener("click", function(){
+			Student.deleteStudent(id[1]);
+		});
+
+		document.getElementById("btn-edit").addEventListener("click", function(){
+			Student.editStudent(id[2], name[2], email[2]);
+		});
+
+		document.getElementById("btn-view").addEventListener("click", function(){
+			Student.viewStudent();
+		});
+	</script>
+	<h3>QUẢN LÝ SINH VIÊN</h3>
+	<div>
+		<form>
+			ID    SINH VIÊN
+			<input type="text" id="id"><br>
+			TÊN   SINH VIÊN
+			<input type="text" id="name"><br>
+			EMAIL SINH VIÊN
+			<input type="email" id="email"><br>
+			<input type="button" id="btn-add" value="Thêm sinh viên">
+		</form>
+		<br>
+		<form>
+			<input type="text" id="id"><br>
+			<input type="button" id="btn-delete" value="Xóa sinh viên"">
+		</form>
+		<br>
+		<form>
+			ID    SINH VIÊN
+			<input type="text" id="id"><br>
+			TÊN   SINH VIÊN
+			<input type="text" id="name"><br>
+			EMAIL SINH VIÊN
+			<input type="email" id="email"><br>
+			<input type="button" id="btn-edit" value="Sửa thông tin sinh viên">
+		</form>
+		<br>
+		<form>
+			<input type="button" value="Xem thông tin sinh viên" id="btn-view">
+		</form>
+	</div>
+	<div id="view">
+		
+	</div>
+</body>
+</html>
