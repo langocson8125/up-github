@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BÀI TẬP VÒNG LẶP 2</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div>
+		<p>Nhập giá trị</p>
+		<input type="text" id="number" name="">
+		<input type="button" id="button" onclick="showPrime()" value="Hiện kết quả" name="">
+	</div>
+	<div id="view">
+
+	</div>
+	<script type="text/javascript">	
+
+		function isPrime(number){
+			if(number < 2){
+				return false;
+			}
+			else if(number == 2){
+				return true;
+			}
+			else if(number % 2 == 0){
+				return false;
+			}
+			for(var i = 3; i <= Math.sqrt(number); i += 2){
+				if(number % i == 0){
+					return false;
+				}
+			}
+			return true;
+		}
+
+		function showPrime(){
+			var number = document.getElementById("number");
+			number = parseInt(number);
+
+			var result = "";
+			for(var j = 0; j <= number; j++){
+				if(isPrime(j)){
+					result += " " + j;
+				}
+			}
+			document.getElementById("view").innerHTML = result;
+		}
+	</script>
+</body>
+</html>
