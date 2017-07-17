@@ -1,16 +1,14 @@
-Lịch trình học Web
+LỊCH TRÌNH HỌC WEB
 
 + 15/8 học xong JS (QUAN TRỌNG)
-+ cuối tháng 9 học xong Jquery 
-+ đầu tháng 10 học xong HTML HTML5 + CSS + CSS3 ( có cơ bản rồi coi lại nhanh vl) ( cái này có thể học song song vs JS )
-+ qua học Bootstrap
++ Cuối tháng 9 học xong Jquery 
++ Đầu tháng 10 học xong HTML HTML5 + CSS + CSS3 ( có cơ bản rồi coi lại nhanh ) ( cái này có thể học song song vs JS )
++ Qua học Bootstrap
 + tháng 11 bắt đầu học PHP + Kết hợp MySQL (QUAN TRỌNG)
 
-Trong suốt quá trình vẫn phải cày cái gì đó để có ngôn ngữ riêng + giải thuật tốt (QUAN TRỌNG)
-Chẳng hạn học C + code C + đọc sách giải thuật của Lê Minh Hoàng
-Làm project nào đó bằng C để up lên github (QUAN TRỌNG)
-Khi đi làm chỉ cần show cái link github ra cho mấy thằng tuyển dụng
-** Cái trên này tùy chọn, tùy người
+KHÔNG PHẢI HỌC XONG CÁI NÀO LÀ BỎ CÁI ĐÓ NHÉ
+KẾT HỢP NHỮNG CÁI ĐÃ HỌC + CÁI ĐANG HỌC 
+LẠI CÀNG GIÚP KHÔNG QUÊN ĐƯỢC KIẾN THỨC
 
 ===>TẤT CẢ NHỮNG CÁI Ở TRÊN: HỌC PHẢI ĐI ĐỔI VỚI HÀNH
 VỪA HỌC VỪA TỰ LÀM CHO MÌNH 1 WEBSITE
@@ -22,36 +20,52 @@ Qua tết đi học tiếng anh TOEIC (HK2)
 Linux tự nghiên cứu - nếu giỏi thì rảnh rảnh đọc mấy cái thủ thuật + bảo mật gì đó cho có tí hiểu biết
 
 Link tài liệu:
-+ HTML cơ bản: https://www.w3schools.com/html/default.asp
++ HTML cơ bản: 
+    https://www.w3schools.com/html/default.asp
 
-+ CSS cơ bản: https://www.w3schools.com/css/default.asp
++ CSS cơ bản:
+    https://www.w3schools.com/css/default.asp
 
-+ Bootstrap 3: https://freetuts.net/hoc-bootstrap/twitter-bootstrap-3
-https://www.w3schools.com/bootstrap/default.asp
++ Bootstrap 3: 
+    https://www.w3schools.com/bootstrap/default.asp
 
-+ JavaScript: https://freetuts.net/hoc-javascript
-( qui trình học trong mục JS cơ bản, ta học phần cơ bản- vòng lặp - data type - object - DOM - EVENT - BOM - bổ sung)
-https://www.w3schools.com/js/default.asp
++ JavaScript: 
+    https://freetuts.net/hoc-javascript - CƠ BẢN
+      (qui trình học trong mục JS cơ bản, ta học phần cơ bản- vòng lặp - data type - object - DOM - EVENT - BOM - bổ sung)
+    https://www.w3schools.com/js/default.asp - FULL
 
-+ Jquery cơ bản: https://freetuts.net/hoc-jquery/jquery-can-ban
-https://www.w3schools.com/jquery/default.asp
++ Jquery: 
+    https://freetuts.net/hoc-jquery/jquery-can-ban - CƠ BẢN
+    https://www.w3schools.com/jquery/default.asp - FULL
 
-+ PHP: https://freetuts.net/hoc-php
-+ MYSQL cơ bản: https://freetuts.net/hoc-mysql/mysql-can-ban
-+PHP-MYSQL TUTS: https://www.w3schools.com/php/php_mysql_insert_multiple.asp
++ PHP: 
+    https://freetuts.net/hoc-php
+    https://www.w3schools.com/php/default.asp
+    
++ MYSQL: 
+    https://freetuts.net/hoc-mysql/mysql-can-ban
+    https://www.w3schools.com/sql/default.asp
+    
++ PHP-MYSQL TUTS: 
+    https://www.w3schools.com/php/php_mysql_insert_multiple.asp
 
 Một kho thủ thuật tham khảo lập trình web bên W3school
+Học thì cũng phải tự nghiên cứu, rút ra các kinh nghiệm trong quá trình học
 
-Năm trong đầu cấu trúc dữ liệu và giải thuật
+Nắm trong đầu cấu trúc dữ liệu và giải thuật
 
-Bonus để chuyển nghiệp hóa khi đi làm
-+Chrome DevTools: https://developer.chrome.com/devtools
-+Gitbub, Gitter: http://rogerdudler.github.io/git-guide/      https://backlogtool.com/git-guide/vn/     https://thachpham.com/tools/git-gioi-thieu-serie-git-co-ban.html
+Bonus để chuyển nghiệp hóa khi đi làm (bắt buộc nhé):
++ Chrome DevTools: https://developer.chrome.com/devtools
++ Gitbub, Gitter: 
+    http://rogerdudler.github.io/git-guide/      
+    https://backlogtool.com/git-guide/vn/    
+    https://thachpham.com/tools/git-gioi-thieu-serie-git-co-ban.html
 
 Chỉ tiêu trước hè năm 2:
-+Năm vững JS, PHP
-+Làm đc front-end
-+Cấu trúc dữ liệu và giải thuật
-+Các bonus yêu cầu ở trên
-+MVC
-+Tiếng anh khá
++ Nắm vững JS, PHP
++ Đến Tết là làm được front-end ( trừ PHP - MYSQL )
++ Cấu trúc dữ liệu và giải thuật
++ Các bonus yêu cầu ở trên
++ MVC ( đã có trong link học PHP của freetut )
++ Tiếng anh khá
++ Có trong CV tầm vài project thực thế ( up lên github để sau này show ra khi phỏng vấn )
