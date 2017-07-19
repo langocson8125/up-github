@@ -34,7 +34,8 @@ Link tài liệu:
       (qui trình học trong mục JS cơ bản, ta học phần cơ bản- vòng lặp - data type - object - DOM - EVENT - BOM - bổ sung)
       ( bỏ GOOGLE MAPS JAVASCRIPT API, tham khảo JAVASCRIPT FUNCTION - JAVASCRIPT REFERENCE - JAVASCRIPT EXAMPLE - JAVASCRIPT TIPS - JAVASCRIPT TUTORIALS )
       (còn lại học hết - mấy cái tham khảo không phải là đọc lướt qua mà để làm vốn đó )
-    https://www.w3schools.com/js/default.asp - FULL
+    https://www.w3schools.com/js/default.asp 
+       ( học từ AJAX -> JSON -> EXAMPLES -> REFERENCE )
 
 + Jquery: 
     https://freetuts.net/hoc-jquery/jquery-can-ban - CƠ BẢN
