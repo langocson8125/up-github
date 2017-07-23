@@ -1,10 +1,9 @@
 LỊCH TRÌNH HỌC WEB
 
-+ 15/8 học xong JS (QUAN TRỌNG)
-+ Cuối tháng 9 học xong Jquery 
-+ Đầu tháng 10 học xong HTML HTML5 + CSS + CSS3 ( có cơ bản rồi coi lại nhanh ) ( cái này có thể học song song vs JS )
-+ Qua học Bootstrap
-+ tháng 11 bắt đầu học PHP + Kết hợp MySQL (QUAN TRỌNG)
++ cuối tháng 8 học xong JS (QUAN TRỌNG)
++ Đầu tháng 9 học xong HTML HTML5 + CSS + CSS3 ( có cơ bản rồi coi lại nhanh ) ( cái này có thể học song song vs JS )
++ 21/9 qua học Bootstrap 
++ tháng 11 bắt đầu học PHP + Kết hợp MySQL (QUAN TRỌNG) - học đến hết năm học luôn
 
 KHÔNG PHẢI HỌC XONG CÁI NÀO LÀ BỎ CÁI ĐÓ NHÉ
 KẾT HỢP NHỮNG CÁI ĐÃ HỌC + CÁI ĐANG HỌC 
@@ -36,11 +35,6 @@ Link tài liệu:
       (còn lại học hết - mấy cái tham khảo không phải là đọc lướt qua mà để làm vốn đó )
     https://www.w3schools.com/js/default.asp 
        ( học từ FORM -> AJAX -> JSON -> EXAMPLES -> REFERENCE )
-
-+ Jquery: 
-    https://freetuts.net/hoc-jquery/jquery-can-ban - CƠ BẢN
-    https://www.w3schools.com/jquery/default.asp - FULL
-
 + PHP: 
     https://freetuts.net/hoc-php
     https://www.w3schools.com/php/default.asp
