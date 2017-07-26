@@ -12,7 +12,9 @@
 void gotoxy(int x,int y){
  printf("%c[%d;%df",0x1B,y,x);
  }
- 
+
+char ip[15] = "192.168.241.128";
+    
 int main(int argc, char *argv[]){
 	
     system("clear");
@@ -32,8 +34,10 @@ int main(int argc, char *argv[]){
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(5000); // port
     
-    char *ip[15] = "192.168.241.128";
-	strcpy(ip,argv[1]);
+
+	for(int i = 0; i < 15;i++){
+		*(argv + i) = ip[i];
+	}
 
     serv_addr.sin_addr.s_addr = inet_addr(ip);
 
@@ -65,7 +69,7 @@ int main(int argc, char *argv[]){
        	 printf("Error opening file");
          return 1;
     	}
-    long double sz=1;
+    long double sz = 1;
     
     /* Receive data in chunks of 256 bytes */
     while((bytesReceived = read(sockfd, recvBuff, 1024)) > 0){ 
@@ -75,7 +79,7 @@ int main(int argc, char *argv[]){
         gotoxy(0,6);
         unsigned long int per = (unsigned long) sz*1024;
         float pers = ((float)per/(float)fsize) * 100;
-        printf("Completed: [%0.2f%]                  \n",pers);
+        printf("Completed: [%0.0f%]                  \n",pers);
         
 		fflush(stdout);
         fwrite(recvBuff, 1,bytesReceived,fp);
