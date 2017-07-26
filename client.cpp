@@ -14,15 +14,15 @@ void gotoxy(int x,int y){
  }
  
 int main(int argc, char *argv[]){
-	
-    int sockfd;
+	system("clear");
+    int sockfd = 0;
     int bytesReceived = 0;
     char recvBuff[1024];
     memset(recvBuff, '0', sizeof(recvBuff));
     struct sockaddr_in serv_addr;
 
-    /* Create a socket */
-    if((sockfd = socket(AF_INET, SOCK_STREAM, 0))< 0){
+    /* Create a socket*/
+    if((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0){
         printf("Oop!!! Could not create socket \n");
         return 1;
     }
@@ -41,21 +41,15 @@ int main(int argc, char *argv[]){
 
     serv_addr.sin_addr.s_addr = inet_addr(ip);
 
-    /*Create a connection */
+    /* Attempt a connection */
     if(connect(sockfd, (struct sockaddr *)&serv_addr, sizeof(serv_addr))<0){
-        printf("\n Error : Connect Failed \n");
+        printf("Error : Connect Failed \n");
         return 1;
     }
 
-    printf("Connected to ip: %s : %d\n",inet_ntoa(serv_addr.sin_addr),ntohs(serv_addr.sin_port));
-    
-	/*Send command*/
-	int commandToSer;
-	printf("Send server a command: ");
-	scanf("%d", &commandToSer);
-	send(sockfd, commandToSer, sizeof(commandToSer), 0);
+    printf("Connected to IP: %s : %d\n",inet_ntoa(serv_addr.sin_addr),ntohs(serv_addr.sin_port));
 	
-   	/* Create file where data will be stored */
+   	 /* Create file where data will be stored */
     FILE *fp;
 	char fname[100];
 	unsigned long fsize = 0;
@@ -73,7 +67,7 @@ int main(int argc, char *argv[]){
 	printf("Receiving file...");
    	fp = fopen(fname, "ab"); 
    	 
-    if(NULL == fp){
+    if(fp == NULL){
        	printf("Error opening file");
         return 1;
     }
@@ -87,10 +81,10 @@ int main(int argc, char *argv[]){
         gotoxy(0,6);
         unsigned long int per = (unsigned long) sz*1024;
         float pers = ((float)per/(float)fsize) * 100;
-        printf("Completed: [%0.0f%]             \n",pers);
+        printf("Completed: [%0.2f%]     \n",pers);
         
 		fflush(stdout);
-        fwrite(recvBuff, 1,bytesReceived,fp);
+        fwrite(recvBuff, 1, bytesReceived, fp);
     }
 
     if(bytesReceived < 0){
