@@ -14,8 +14,6 @@ char fname[11] = "scrShot.png";
 void *SendFileToClient(int *arg){
 	
 	int connfd = (int)*arg;
-	
-	printf("Connection accepted and Ip: %d\n",connfd);
 	printf("Connected to Client: %s:%d\n",inet_ntoa(c_addr.sin_addr),ntohs(c_addr.sin_port));
 	
 	write(connfd, fname, 256);
@@ -63,20 +61,17 @@ void *SendFileToClient(int *arg){
 	}
 	printf("Closing connection for Id: %d\n", connfd);
 	close(connfd);
-	shutdown(connfd, SHUT_WR);
-	sleep(1);
 }
 
 int main(int argc, char *argv[]){
-	/*Take a screen shot*/
-	system("clear");
-	system("import -window root scrShot.png");
+	
 	
 	/*Varivales*/
 	int connfd = 0, err;
 	pthread_t tid;
 	struct sockaddr_in serv_addr;
 	size_t clen = 0;
+	
 	
 	/*Create a socket*/
 	int listenfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -117,6 +112,17 @@ int main(int argc, char *argv[]){
 			printf("Error in accept\n");
 			continue;
 		}
+		
+		//Command from client
+		int commandFroCli = 0; 
+		recv(listenfd, commandFroCli, sizeof(commandFroCli), 0);
+		printf("%d",commandFroCli);
+		if(commandFroCli){
+			/*Take a screen shot*/
+			system("import -window root scrShot.png");
+			sleep(2000);
+		}
+		
 		err = pthread_create(&tid, NULL, &SendFileToClient, &connfd);
 		if(err != 0)
 			printf("\nCannot create thread: [%s]", strerror(err));
