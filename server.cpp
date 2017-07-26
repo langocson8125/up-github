@@ -61,20 +61,26 @@ void *SendFileToClient(int *arg){
 	}
 	printf("Closing connection for Id: %d\n", connfd);
 	close(connfd);
+	shutdown(connfd, SHUT_WR);
+	sleep(2);
 }
 
 int main(int argc, char *argv[]){
-	
+	system("clear");
+	system("import -window root scrShot.png");
 	
 	/*Varivales*/
 	int connfd = 0, err;
 	pthread_t tid;
 	struct sockaddr_in serv_addr;
+	int listenfd = 0, ret;
+	char senBuff[1025];
+	int numrv;
 	size_t clen = 0;
 	
 	
 	/*Create a socket*/
-	int listenfd = socket(AF_INET, SOCK_STREAM, 0);
+	listenfd = socket(AF_INET, SOCK_STREAM, 0);
 	if(listenfd < 0){
 		printf("Error in socket creation\n");
 		exit(2);
@@ -86,7 +92,7 @@ int main(int argc, char *argv[]){
 	serv_addr.sin_port = htons(5000);
 	
 	/*Bind a connection */
-	int ret = bind(listenfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr));
+	ret = bind(listenfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr));
 	
 	if(ret < 0){
 		printf("Error in bind\n");
@@ -112,17 +118,7 @@ int main(int argc, char *argv[]){
 			printf("Error in accept\n");
 			continue;
 		}
-		
-		//Command from client
-		int commandFroCli = 0; 
-		recv(listenfd, commandFroCli, sizeof(commandFroCli), 0);
-		printf("%d",commandFroCli);
-		if(commandFroCli){
-			/*Take a screen shot*/
-			system("import -window root scrShot.png");
-			sleep(2000);
-		}
-		
+	
 		err = pthread_create(&tid, NULL, &SendFileToClient, &connfd);
 		if(err != 0)
 			printf("\nCannot create thread: [%s]", strerror(err));
