@@ -31,13 +31,13 @@ Link tài liệu:
     https://www.w3schools.com/bootstrap/default.asp
 
 + JavaScript: 
-    https://freetuts.net/hoc-javascript - CƠ BẢN
+    * https://freetuts.net/hoc-javascript - CƠ BẢN - NÂNG CAO
       (qui trình học trong mục JS cơ bản, ta học phần cơ bản- vòng lặp - data type - object - DOM - EVENT - BOM - bổ sung)
-      ( bỏ GOOGLE MAPS JAVASCRIPT API, tham khảo JAVASCRIPT FUNCTION - JAVASCRIPT REFERENCE - JAVASCRIPT EXAMPLE - JAVASCRIPT TIPS - JAVASCRIPT TUTORIALS )
+      ( bỏ GOOGLE MAPS JAVASCRIPT API, tham khảo JS FUNCTION - JS REFERENCE - JS EXAMPLE - JS TIPS - JS TUTORIALS )
       (còn lại học hết - mấy cái tham khảo không phải là đọc lướt qua mà để làm vốn đó )
-    https://www.w3schools.com/js/default.asp 
+    * W3school : https://www.w3schools.com/js/default.asp 
        ( học từ FORM -> AJAX -> JSON -> EXAMPLES -> REFERENCE )
-    ECMAScript 2015 (ES6) : https://freetuts.net/hoc-ecmascript/ecmascript-2015-es6
+    * chuẩn JS mới - ECMAScript 2015 (ES6) : https://freetuts.net/hoc-ecmascript/ecmascript-2015-es6
 + PHP: 
     https://freetuts.net/hoc-php
     https://www.w3schools.com/php/default.asp
