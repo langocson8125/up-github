@@ -37,6 +37,7 @@ Link tài liệu:
       (còn lại học hết - mấy cái tham khảo không phải là đọc lướt qua mà để làm vốn đó )
     https://www.w3schools.com/js/default.asp 
        ( học từ FORM -> AJAX -> JSON -> EXAMPLES -> REFERENCE )
+    ECMAScript 2015 (ES6) : https://freetuts.net/hoc-ecmascript/ecmascript-2015-es6
 + PHP: 
     https://freetuts.net/hoc-php
     https://www.w3schools.com/php/default.asp
