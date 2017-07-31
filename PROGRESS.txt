@@ -34,20 +34,20 @@ Link tài liệu:
     * https://freetuts.net/hoc-javascript - CƠ BẢN - NÂNG CAO
       (qui trình học trong mục JS cơ bản, ta học phần cơ bản- vòng lặp - data type - object - DOM - EVENT - BOM - bổ sung)
       ( bỏ GOOGLE MAPS JAVASCRIPT API, tham khảo JS FUNCTION - JS REFERENCE - JS EXAMPLE - JS TIPS - JS TUTORIALS )
-      (còn lại học hết - mấy cái tham khảo không phải là đọc lướt qua mà để làm vốn đó )
+      ( còn lại học hết - mấy cái tham khảo không phải là đọc qua mà để làm vốn đó )
     * W3school : https://www.w3schools.com/js/default.asp 
        ( học từ FORM -> AJAX -> JSON -> EXAMPLES -> REFERENCE )
-    * chuẩn JS mới - ECMAScript 2015 (ES6) : https://freetuts.net/hoc-ecmascript/ecmascript-2015-es6
+
 + PHP: 
-    https://freetuts.net/hoc-php
-    https://www.w3schools.com/php/default.asp
+    https://freetuts.net/hoc-php (vừa học vừa dịch sách)
+    https://www.w3schools.com/php/default.asp - Tham khảo thêm
+    
++ PHP-MYSQL TUTS: 
+    https://www.w3schools.com/php/php_mysql_insert_multiple.asp
     
 + MYSQL: 
     https://freetuts.net/hoc-mysql/mysql-can-ban
     https://www.w3schools.com/sql/default.asp
-    
-+ PHP-MYSQL TUTS: 
-    https://www.w3schools.com/php/php_mysql_insert_multiple.asp
 
 Một kho thủ thuật tham khảo lập trình web bên W3school
 Học thì cũng phải tự nghiên cứu, rút ra các kinh nghiệm trong quá trình học
