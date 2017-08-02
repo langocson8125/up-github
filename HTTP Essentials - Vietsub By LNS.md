@@ -2728,7 +2728,7 @@ Bảng 5.11 liệt kê các dạng icp message và cách sử dụng. ICP là gi
 |Error|Người gửi không hiểu một truy vấn nó nhận được.|
 |Echo|Một ICP message giả mà được gửi bởi UDP echo port của một hệ thống mà không hiểu ICP; có hai phiên bản của mesage này, một cái dành cho server gốc và cái còn lại dành cho các cache server.|
 
-### 5.2.7 Hypet Text Caching Protocol
+### 5.2.7 HyperText Caching Protocol
 
 HTCP giải quết một số thiếu sót của ICP, và nó bổ sung thêm vài chức năng. Với HTCP, các cache server có thể thăm dò nội dung của các cache server khác để tìm ra nếu một object được lấy ra nhanh hơn là lấy từ server gốc. Không giống như ICP, HTCP cho phép server gửi chứa một bản sao của tất cả các http header trong request ban đầu của client, nên các server phản hồi có thể xác định chính xác hơn nếu bản sao của nó phù hợp với client. Ngoài ra, htcp cho phép các cache server giám sát nội dung của nhau; với đặc điểm này chúng báo khi một "hàng xóm" bổ sung các object mới, chỉ sửa hoặc xóa. Thông qua HTCP, các server cũng có thể chỉnh sửa nội dung của các cache server khác, bổ sung hoặc xóa. Bởi vì htcp được sử dụng để chỉnh sửa nội dung của một local cache server, các message của nó chứa các thông tin xác thực để xác nhận danh tính người gửi.
 
