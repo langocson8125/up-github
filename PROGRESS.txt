@@ -51,7 +51,9 @@ Link tài liệu:
     
 + MYSQL: 
     https://freetuts.net/hoc-mysql/mysql-can-ban
-    https://www.w3schools.com/sql/default.asp - tham khảo thêm
+
++ SQL:
+    https://www.w3schools.com/sql/default.asp
 
 Một kho thủ thuật tham khảo lập trình web bên W3schools
 Học thì cũng phải tự nghiên cứu, rút ra các kinh nghiệm trong quá trình học
@@ -65,7 +67,7 @@ Bonus để chuyển nghiệp hóa khi đi làm (bắt buộc nhé):
     https://backlogtool.com/git-guide/vn/    
     https://thachpham.com/tools/git-gioi-thieu-serie-git-co-ban.html
     
-+Tất cả những thứ trong đây không có cái nào học đối phó, qua loa mà là học để có kiến thức đi làm
++ Tất cả những thứ trong đây không có cái nào học đối phó, qua loa mà là học để có kiến thức đi làm
 
 Chỉ tiêu trước hè năm 2:
 + Nắm vững JS, PHP
