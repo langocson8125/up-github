@@ -38,7 +38,10 @@ Link tài liệu:
       ( còn lại học hết - mấy cái tham khảo không phải là đọc qua mà để làm vốn đó )
     * W3school : https://www.w3schools.com/js/default.asp 
        ( học từ FORM -> AJAX -> JSON -> EXAMPLES -> REFERENCE )
-
+       
++JQuery: ( cái này không ép buộc, nếu học thì bỏ thời gian rảnh ra học đoàng học, còn không thì tìm hiểu về nó để biết )
+    https://www.w3schools.com/jquery/default.asp
+    
 + PHP: 
     https://freetuts.net/hoc-php (vừa học vừa dịch sách)
     https://www.w3schools.com/php/default.asp - Tham khảo thêm
