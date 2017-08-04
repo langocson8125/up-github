@@ -48,9 +48,9 @@ Link tài liệu:
     
 + MYSQL: 
     https://freetuts.net/hoc-mysql/mysql-can-ban
-    https://www.w3schools.com/sql/default.asp
+    https://www.w3schools.com/sql/default.asp - tham khảo thêm
 
-Một kho thủ thuật tham khảo lập trình web bên W3school
+Một kho thủ thuật tham khảo lập trình web bên W3schools
 Học thì cũng phải tự nghiên cứu, rút ra các kinh nghiệm trong quá trình học
 
 Nắm trong đầu cấu trúc dữ liệu và giải thuật
