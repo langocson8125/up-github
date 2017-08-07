@@ -3,7 +3,7 @@
 
 ### Ta sử dụng máy ảo Linux, cụ thể trong đây là Ubuntu
 
-**Các bước thực hiện như sau: **
+** Các bước thực hiện như sau: **
 * 1.Tạo ra 2 cửa sổ lệnh terminal
 * 2.Ta qui ước hai terminal có tên là A và B
 * 3.Ở terminal A, ta dùng lệnh `gcc client.cpp -o client` để compile file client ra
