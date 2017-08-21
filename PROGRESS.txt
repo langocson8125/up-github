@@ -5,8 +5,7 @@ LỊCH TRÌNH HỌC WEB (nặng về back-end, nói tóm gọn là front-end 3, 
 + 21/9 qua học Bootstrap 
 ( học mấy cái này vẫn phải kèm theo JS để nâng cao kiến thức - HTML CSS ko phải ngôn ngữ lập trình )
 + tháng 11 bắt đầu học PHP + Kết hợp MySQL (QUAN TRỌNG) - học đến hết năm học luôn
-+ VỪA HỌC PHP VỪA DỊCH SÁCH PHP Cookbook 3rd Edition - mỗi ngày dịch 4 mục nhỏ ( ví dụ 2.1-2.4, 3.5-3.9....) 
-( link sách: https://drive.google.com/file/d/0B9ZH95pithj1M2gyQ0dMUW5tM00/view?usp=sharing )
++ VỪA HỌC PHP VỪA DỊCH HẾT PHP TUTS CỦA W3SCHOOLS
 
 KHÔNG PHẢI HỌC XONG CÁI NÀO LÀ BỎ CÁI ĐÓ NHÉ
 KẾT HỢP NHỮNG CÁI ĐÃ HỌC + CÁI ĐANG HỌC 
@@ -43,7 +42,7 @@ Link tài liệu:
     https://www.w3schools.com/jquery/default.asp
     
 + PHP: 
-    https://freetuts.net/hoc-php (vừa học vừa dịch sách)
+    mua khóa học của Zend
     https://www.w3schools.com/php/default.asp - Tham khảo thêm
     
 + PHP-MYSQL TUTS: 
