@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        var str = $('input[type="text"]').val();
+        function palindrome(str){
+            var strAtferFilter = [];
+
+            for(var i = 0; i < str.length ; i++){
+                var code = str.charCodeAt(i);
+                if( (code > 64 && code < 91 ) || (code > 96 && code < 123) ){
+                    strAtferFilter.push(str.charAt(i));
+                }
+            }
+            var strTmp = strAtferFilter.reverse().join("");
+            strAtferFilter.join("");
+
+            if(strAtferFilter == strTmp){
+                alert("true");
+            }
+            else{
+                alert("false");
+            }
+        }
+        $('#button').click(function(event) {
+            $('.result').text('Result ' + palindrome(str));
+        });
+        
+    </script>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    <label>Insert <input type="text" id="string"></label>
+    <input type="button" value="Show result" id="button">
+    <div class="result"></div>
+</body>
+</html>
