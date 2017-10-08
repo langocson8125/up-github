@@ -19,11 +19,9 @@
             strAtferFilter.join("");
 
             if(strAtferFilter == strTmp){
-                alert("true");
+                return true;
             }
-            else{
-                alert("false");
-            }
+            return false;
         }
         $('#button').click(function(event) {
             $('.result').text('Result ' + palindrome(str));
