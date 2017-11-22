@@ -26,7 +26,7 @@
         public function OpenConnection(){
             $user   = $this->DBUser;
             $pass   = $this->DBPassword;
-            $option = $this->options;
+            $option = $this->option;
             $dsn    = $this->dsn;
             try {
                 $this->connect = new PDO($dsn, $user, $pass, $option);
