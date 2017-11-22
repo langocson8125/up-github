@@ -30,9 +30,6 @@
             $dsn    = $this->dsn;
             try {
                 $this->connect = new PDO($dsn, $user, $pass, $option);
-                echo "<pre>";
-                print_r($this->connect);
-                echo "</pre>";
                 echo 'Connect database success!';
             }
             // Catch any errors
