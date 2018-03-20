@@ -2,7 +2,7 @@
 #include "conio.h"
 #include "stdlib.h"
 
-// Nhap mang
+// Nhập mảng
 void NhapMang(int *a, int n){
 	for(int i = 0; i < n; i++){
 		printf("Nhap phan tu a[%d] ", i + 1);
@@ -10,30 +10,30 @@ void NhapMang(int *a, int n){
 	}
 }
 
-// Xuat mang
+// Xuất mảng
 void XuatMang(int *a, int n){
 	for(int i = 0; i < n; i++){
 		printf("%4d", *(a + i));
 	}
 }
 
-// Them phan tu vao mang
+// Thêm phần tử vào mảng
 void ThemPhanTu(int *&a, int &n, int ViTriThem, int PhanTuThem){
-	realloc(a, (n + 1) * sizeof(int *)); // tang bo nho them 1 o
+	realloc(a, (n + 1) * sizeof(int *)); // tăng thêm một ô nhớ
 	for(int i = n; i >= ViTriThem; i--){
 		*(a + i) = *(a + (i - 1));
 	}
 	*(a + (ViTriThem - 1)) = PhanTuThem;
-	n++; // tang kich thuoc cua mang len
+	n++; // tăng kích thước của mảng lên
 }
 
-// Xoa phan tu khoi mang
+// Xóa phần tử 
 void XoaPhanTu(int *&a, int &n, int ViTriXoa){
 	for(int i = ViTriXoa - 1; i < n - 1; i++){
 		*(a + i) = *(a + (i + 1));
 	}
-	n--; // giam kich thuoc cua mang xuong
-	realloc(a, n * sizeof(int *)); // giam bo nho them 1 o
+	n--; // giảm kích thước của mảng xuống
+	realloc(a, n * sizeof(int *)); // giảm bộ nhớ xuống 1 ô
 }
 
 int main(){
@@ -48,7 +48,7 @@ int main(){
 	}
 	while(n < 0);
 	
-	// cap phat so phan tu cua mang
+	// Cấp phát số phần tử của mảng
 	int *a = (int *)realloc(0,  n * sizeof(int *));
 	
 	NhapMang(a, n);
@@ -57,10 +57,10 @@ int main(){
 	
 	printf("\n--------------------------------------------------------------");
 	
-	// ----------------- THEM PHAN TU -----------------------
+	// ----------------- Thêm phần tử -----------------------
 	int ViTriThem, PhanTuThem;
 	
-	// vi tri them nam tu 0->n
+	// vị trí từ 1 --> n
 	do{
 		printf("\nNhap vao vi tri can them (%d ---> %d): ", 1, n);
 		scanf("%d", &ViTriThem);
@@ -79,10 +79,10 @@ int main(){
 	
 	printf("\n--------------------------------------------------------------");
 	
-	// -------------------- XOA PHAN TU -----------------------
+	// -------------------- Xóa phần tử -----------------------
 	int ViTriXoa;
 	
-	// vi tri them nam tu 0->n
+	// vị trí từ 1 --> n
 	do{
 		printf("\nNhap vao vi tri can xoa (%d ---> %d): ", 1, n);
 		scanf("%d", &ViTriXoa);
@@ -96,9 +96,8 @@ int main(){
 	printf("\nMang sau khi xoa: ");
 	XuatMang(a, n);
 	
-	// Kiem tra phan tu cuoi sau khi giam so phan tu xuong 1
-	printf("%d", *(a + n)); // xem da duoc giai phong chua
-	// --------------------- GIAI PHONG BO NHO -----------------------
+	printf("%d", *(a + n)); 
+	// --------------------- Giải phóng ô nhớ -----------------------
 	free(a);
 	return 0;
 }
