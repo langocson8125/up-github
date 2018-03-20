@@ -32,9 +32,7 @@ void XoaPhanTu(int *&a, int &n, int ViTriXoa){
 	for(int i = ViTriXoa - 1; i < n - 1; i++){
 		*(a + i) = *(a + (i + 1));
 	}
-	
 	n--; // giam kich thuoc cua mang xuong
-	
 	realloc(a, n * sizeof(int *)); // giam bo nho them 1 o
 }
 
