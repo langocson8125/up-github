@@ -38,6 +38,7 @@ void XoaPhanTu(int *&a, int &n, int ViTriXoa){
 
 int main(){
 	printf("------------------Them/xoa phan tu cua mang--------------------");
+	// ------------------- Nhập độ dài của mạng -----------------------
 	int n;
 	do{
 		printf("\nNhap so phan tu cua mang: ");
