@@ -27,7 +27,7 @@ void ThemPhanTu(int *&a, int &n, int ViTriThem, int PhanTuThem){
 	n++; // tăng kích thước của mảng lên
 }
 
-// Xóa phần tử 
+// Xóa phần tử trong mảng
 void XoaPhanTu(int *&a, int &n, int ViTriXoa){
 	for(int i = ViTriXoa - 1; i < n - 1; i++){
 		*(a + i) = *(a + (i + 1));
