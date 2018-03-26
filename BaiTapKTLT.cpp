@@ -3,9 +3,9 @@
 #include "conio.h"
 
 /*
-	ham tinh tong cac to tu 1-n
-	tham so: n
-	tra ve: ket qua sau khi tinh tong
+	hàm tính tổng các số từ 1 đến n
+	tham số: n 
+	trả về: kết quả sau khi tính tổng
 */
 int TongCacSo(int n, int x = 1){
 	if(n == 1){
@@ -15,9 +15,9 @@ int TongCacSo(int n, int x = 1){
 }
 
 /*
-	ham tinh tong binh phuong cac so tu 1-n
-	tham so: n
-	tra ve: ket qua sau khi tinh tong
+	hàm tính tổng bình phương các số từ 1 đén n
+	tham số: n
+	trả về: kết quả sau khi tính tổng
 */
 int TongBinhPhuong(int n, int x = 1){
 	if(n == 1){
@@ -27,9 +27,9 @@ int TongBinhPhuong(int n, int x = 1){
 }
 
 /*
-	ham tinh tong cac phan so: 1 + 1/2 + ... + 1/n
-	tham so: n
-	tra ve: ket qua sau khi tinh tong
+	hàm tính tổng phân số: 1 + 1/2 + ... + 1/n
+	tham số: n
+	trả về: kết quả sau khi tính tổng
 */
 float TongPhanSo(int n, float x = 1){
 	if(n == 1){
@@ -39,9 +39,9 @@ float TongPhanSo(int n, float x = 1){
 }
 
 /*
-	ham tinh giai thua cua n
-	tham so: n - so can tinh
-	tra ve: ket qua sau khi tinh giai thua
+	hàm tính giai thừa của n
+	tham số: n
+	trả về: kết quả sau khi tính giai thừa
 */
 int GiaiThua(int n, int x = 1){
 	if(n == 1){
@@ -51,7 +51,7 @@ int GiaiThua(int n, int x = 1){
 }
 
 /*
-	ham tinh tong gia thua tu 1-n
+	hàm tính tổng giai thừa của từ 1 đến n
 	tham so: n
 	tra ve: ket qua sau khi tinh tong
 */
@@ -63,9 +63,9 @@ int TongGiaiThua(int n, int x = 1){
 }
 
 /*
-	ham tim uoc chung lon nhat cua 2 so
-	tham so: so thu nhat, so thu hai
-	tra ve: uoc chung lon nhat cua hai so
+	hàm tìm ước chung lớn nhất của 2 số
+	tham số: số thứ nhất, số thứ hai
+	trả về: ước chung lớn nhất của hai số
 */
 int UCLN(int a, int b){
 	int highest;
@@ -78,8 +78,8 @@ int UCLN(int a, int b){
 }
 
 /*
-	ham in ra cac phan tu cua mang
-	tham so: n - so phan tu can xuat
+	hàm in ra các phần tử của mảng
+	tham số: mảng cần in, số phần tử cần in
 */
 void XuatMang(int *a, int n){
 	for(int i = 0; i < n; i++){
@@ -88,8 +88,8 @@ void XuatMang(int *a, int n){
 }
 
 /*
-	xuat ra n phan tu dau cua day Fibonacy
-	tham so: n - so phan tu can xuat
+	xuất ra n phần tử đầu của dãy fibonacy
+	tham số truyền vào: mảng chứa các số đó, số phần tử cần in ra
 */
 void Fibonacy(int *a, int n){
 	*(a) = *(a + 1) = 1;
@@ -100,7 +100,7 @@ void Fibonacy(int *a, int n){
 }
 
 int main(){
-	// nhap gia tri n 
+	// nhập giá trị n
 	int n;
 	do{
 		printf("Nhap n: ");
@@ -111,10 +111,11 @@ int main(){
 	}
 	while(n < 0);
 	
-	// cap phat dong so phan tu cua mang
+	// cấp phát động số phần tử của mảng
 	int *a = (int *)realloc(0,  n * sizeof(int *));
 	Fibonacy(a, n);
 	
+	// giải phóng mảng
 	free(a);
 	return 0;
 }
