@@ -16,6 +16,14 @@ void CapPhat(int **array, int dong, int cot){
 	}
 }
 
+// hàm giải phóng mảng hai chiều
+void GiaiPhong(int **&array, int dong){
+	for(int i = 0; i < dong; i++){
+		free(array[i]);
+	}
+	free(array);
+}
+
 int main(){
 	int dong, cot; // input dòng và cột
 	do{
@@ -32,6 +40,6 @@ int main(){
 	CapPhat(array, dong, cot);  // thực hiện hàm cấp phát
 	
 	// giải phóng mảng sau khi sử dụng
-	free(array);
+	GiaiPhong(array, dong);
 	return 0;
 }
