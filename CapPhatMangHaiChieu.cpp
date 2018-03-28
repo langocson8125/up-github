@@ -9,11 +9,10 @@
 
 // hàm cấp phát động mảng hai chiều
 void CapPhat(int **array, int dong, int cot){
-	array = (int **)realloc(0, sizeof(int *) * dong);
-	// cấp phát số dòng (tương đương mỗi ô nhớ)
+	array = (int **)malloc(dong * sizeof(int *));
 	
-	for(int i = 0; i < dong; i++){ // cấp phát số cột
-		array[i] = (int *)realloc(array[i], sizeof(int) * cot);
+	for(int i = 0; i < dong; i++){
+		array[i] = (int *)malloc(cot * sizeof(int));
 	}
 }
 
@@ -22,7 +21,6 @@ int main(){
 	do{
 		printf("\nNhap so dong, so cot cua mang: ");
 		scanf("%d %d", &dong, &cot);
-		printf("%d %d", dong, cot);
 		if(dong < 0 || cot < 0){
 			printf("\nNhap sai, nhap lai.");
 		}
