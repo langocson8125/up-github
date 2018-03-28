@@ -8,7 +8,7 @@
 // Lỗi xảy ra: tràn bộ nhớ
 
 // hàm cấp phát động mảng hai chiều
-void CapPhat(int **array, int dong, int cot){
+void CapPhat(int **&array, int dong, int cot){
 	array = (int **)malloc(dong * sizeof(int *));
 	
 	for(int i = 0; i < dong; i++){
