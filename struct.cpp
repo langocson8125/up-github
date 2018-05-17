@@ -72,13 +72,13 @@ void InsertOneProduct(Product *&array, int &n, Product PhanTuThem){
 }
 
 Product * FindProductCode(Product *array, int n, char search[]){
-	for(int i = 0; i < n; i++){
-		if((array + i)->code == search){
-			printf("da vao day");
-			return (array + i);
+	for(int i = 0; i < n/2; i++){
+		if((array + i)->code == search || (array + n - 1 - i)->cod){
+			printf("da vao day"); // check thử coi nó vào được if chưa
+			return (array + i); // đéo vào được, huhu
 		}
 	}
-	return NULL;
+	return NULL; // nó trả về con Nu
 }
 
 int main(){
