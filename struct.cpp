@@ -47,6 +47,7 @@ Product CreateProduct(){
 	return created;
 }
 
+
 void ShowProduct(Product *array, int n = 1){
 	printf("Danh sach san pham\n");
 	for(int i = 0; i < n; i++){
@@ -56,7 +57,7 @@ void ShowProduct(Product *array, int n = 1){
 		printf("Price: %3.2f | ", (array + i)->price);
 		printf("Quantity: %d | ", (array + i)->quantity);
 		printf("Date product: %s | ", (array + i)->dateProduct);
-		printf("Place product: %s | \n", (array + i)->placeProduct);
+		printf("Place product: %s\n", (array + i)->placeProduct);
 	}	
 }
 
@@ -71,14 +72,47 @@ void InsertOneProduct(Product *&array, int &n, Product PhanTuThem){
 	*(array + n) = PhanTuThem;
 }
 
-Product * FindProductCode(Product *array, int n, char search[]){
+Product * FindProductCode(Product *array, int n, char* search){
 	for(int i = 0; i < n/2; i++){
-		if((array + i)->code == search || (array + n - 1 - i)->cod){
-			printf("da vao day"); // check thử coi nó vào được if chưa
-			return (array + i); // đéo vào được, huhu
+		if((array + i)->code == search){
+			return (array + i);
+		}
+		else if((array + n - 1 - i)->code == search){
+			return (array + n - 1 - i);
 		}
 	}
-	return NULL; // nó trả về con Nu
+	return NULL;
+}
+
+Product * FindProductName(Product *array, int n, char* search){
+	for(int i = 0; i < n/2; i++){
+		if((array + i)->name == search){
+			return (array + i);
+		}
+		else if((array + n - 1 - i)->name == search){
+			return (array + n - 1 - i);
+		}
+	}
+	return NULL;
+}
+
+
+Product * FindProductPrice(Product *array, int n, float search){
+	int count = 0;
+	Product * tmpArray;
+	tmpArray = (Product *)malloc(count * sizeof(Product));
+	
+	for(int i = 0; i < n/2; i++){
+		if((array + i)->price == search){
+			count++;
+			InsertOneProduct(tmpArray, count, *(array + i));
+		}
+		else if((array + n - 1 - i)->price == search){
+			count++;
+			InsertOneProduct(tmpArray, count, *(array + n - 1 - i));
+		}
+	}
+	return tmpArray;
 }
 
 int main(){
@@ -94,20 +128,21 @@ int main(){
 	
 	Product *listProduct;
 	listProduct = (Product *)malloc(n * sizeof(Product));
+	
 	if(n == 1){
 		*listProduct = CreateProduct();
-		ShowProduct(listProduct);
+		//ShowProduct(listProduct);
 	}
 	else {
 		InsertMoreProduct(listProduct, n);
-		ShowProduct(listProduct, n);
+		//ShowProduct(listProduct, n);
 	}
 	
-	if(FindProductCode(listProduct, n, "1") == NULL){
-		printf("ko");
+	if(FindProductPrice(listProduct, n, 1) == NULL){
+		printf("Khong tim thay san pham nao");
 	}
 	else{
-		printf("San pham can tim: \n%p", FindProductCode(listProduct, n, "1"));
+		printf("San pham can tim: %p\n", FindProductPrice(listProduct, n, 1));
 	}
 	
 	free(listProduct);
