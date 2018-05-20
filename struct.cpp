@@ -149,6 +149,7 @@ int DeleteProductByCode(Product *&array, int &n, char* code){
 		}
 		n--; 
 		realloc(array, n * sizeof(Product *)); 
+		return 1;
 	}
 }
 
