@@ -170,6 +170,10 @@ int DeleteProductByCode(Product *&array, int &n, char* code){
 void SaveFileData(Product *array, int n, char *fileName){
 	FILE *file;
 	file = fopen(fileName, "a");
+	if(!file){
+		printf("\nKhong tim thay file: %s", fileName);
+		return;
+	}
 	// get system time
 	time_t rawtime;
     struct tm * timeinfo;
@@ -188,7 +192,7 @@ void SaveFileData(Product *array, int n, char *fileName){
 		fprintf(file, "Date product:%s|", (array + i)->dateProduct);
 		fprintf(file, "Place product:%s\n", (array + i)->placeProduct);
 	}
-	fprintf("========================================================");
+	fprintf(file, "========================================================");
 	fclose(file);
 }
 
@@ -213,7 +217,7 @@ int main(){
 	InitListProduct(listProduct, n);
 	ShowProduct(listProduct, n);
 	
-	// test sau khi xóa
+	// test sau khi xÃ³a
 	DeleteProductByCode(listProduct, n, "1");
 	ShowProduct(listProduct, n);
 	SaveFileData(listProduct, n, "data.txt");
