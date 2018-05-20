@@ -127,6 +127,31 @@ Product * FindProductPrice(Product *array, int n, float search){
 	}
 }
 
+int EditProductByCode(Product *&array, int n, char* code){
+	Product * tmpPointer = FindProductCode(array, n, code);
+	if(tmpPointer == NULL){
+		return 0;
+	}
+	else{
+		*tmpPointer = CreateProduct();
+		return 1;
+	}
+}
+
+int DeleteProductByCode(Product *&array, int &n, char* code){
+	Product * tmpPointer = FindProductCode(array, n, code);
+	if(tmpPointer == NULL){
+		return 0;
+	}
+	else{
+		for(int i = 0; (array + i) != (array + n - 1); i++){
+			*(array + i) = *(array + i + 1);
+		}
+		n--; 
+		realloc(array, n * sizeof(Product *)); 
+	}
+}
+
 int main(){
 	int n;
 	do{
@@ -142,12 +167,16 @@ int main(){
 	listProduct = (Product *)malloc(n * sizeof(Product));
 	
 	InitListProduct(listProduct, n);
-	//ShowProduct(listProduct, n);
+	ShowProduct(listProduct, n);
 	
-	Product * result = FindProductName(listProduct, n, "abc");
-	printf("%s", result->code);
+	// test sau khi xóa
+	DeleteProductByCode(listProduct, n, "1");
+	ShowProduct(listProduct, n);
 	
-	free(result);
+	//Product * result = FindProductName(listProduct, n, "abc");
+	//printf("%s", result->code);
+	//free(result);
+	printf("%s", (listProduct + n)->code);
 	free(listProduct);
 	return 0;
 }
