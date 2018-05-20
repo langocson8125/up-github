@@ -74,11 +74,9 @@ void AddElement(Product *&array, int count, Product PhanTuThem){
 Product * FindProductCode(Product *array, int n, char *search){
 	for(int i = 0; i <= n/2; i++){	
 		if(strcmp((array + i)->code, search) == 0){
-			printf("ok1");
 			return (array + i);
 		}
 		else if(strcmp((array + n - 1 - i)->code, search) == 0){
-			printf("ok2");
 			return (array + n - 1 - i);
 		}
 	}
