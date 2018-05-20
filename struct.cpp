@@ -2,25 +2,24 @@
 #include "stdlib.h"
 #include "string.h"
 
-// khởi tạo cấu trúc cho một sản phẩm
 struct Product{
 	char code[11];
 	char name[255];
 	float price;
-	int quantity; // số lượng 
+	int quantity;
 	char dateProduct[11];
 	char placeProduct[255];	
 };
 
-// hàm tạo sản phẩm
 Product CreateProduct(){
-	Product created; // tạo một biến chứa sản phẩm
+	Product created;
+	
 	printf("Insert product(s)\n");
 	fflush(stdin);
 	printf("Code:");
-	gets(created.code); // nhập code
+	gets(created.code);
 	printf("Name:");
-	gets(created.name); // nhập tên
+	gets(created.name);
 	
 	do{
 		printf("Price:");
@@ -30,8 +29,7 @@ Product CreateProduct(){
 			printf("Insert invalid price! Try again\n");
 		}
 	}
-	while(created.price <= 0); // nhập giá
-	
+	while(created.price <= 0);
 	do{
 		printf("Quantity:");
 		scanf("%d", &created.quantity);
@@ -40,19 +38,15 @@ Product CreateProduct(){
 			printf("Insert invalid quantity! Try again\n");
 		}
 	}
-	while(created.price <= 0); // nhập số lượng
+	while(created.price <= 0);
 
 	printf("Date product:");
-	gets(created.dateProduct); // nhập ngày sản xuất
-	
+	gets(created.dateProduct);
 	printf("Place product:");
-	gets(created.placeProduct); // nhập nơi sản xuất
-	
-	// trả về sản phẩm sau khi tạo
+	gets(created.placeProduct);
 	return created;
 }
 
-// hảm hiển thị các sản phẩm
 void ShowProduct(Product *array, int n = 1){
 	printf("Danh sach san pham\n");
 	for(int i = 0; i < n; i++){
@@ -66,37 +60,33 @@ void ShowProduct(Product *array, int n = 1){
 	}	
 }
 
-// hàm thêm nhiều sản phẩm
 void InitListProduct(Product *&array, int n){
 	for(int i = 0; i < n; i++){
 		*(array + i) = CreateProduct();
 	}	
 }
 
-// hàm thêm một sản phẩm 
-void AddElement(Product *&array, int &n, Product PhanTuThem){
-	realloc(array, (n + 1) * sizeof(Product *));
-	*(array + n) = PhanTuThem;
+void AddElement(Product *&array, int count, Product PhanTuThem){
+	realloc(array, (count + 1) * sizeof(Product *));
+	*(array + count) = PhanTuThem;
 }
 
-// ERROR!!!
-// tìm sản phẩm theo code
-Product * FindProductCode(Product *array, int n, char* search){
-	for(int i = 0; i < n/2; i++){
+Product * FindProductCode(Product *array, int n, char *search){
+	for(int i = 0; i <= n/2; i++){	
 		if(strcmp((array + i)->code, search) == 0){
+			printf("ok1");
 			return (array + i);
 		}
 		else if(strcmp((array + n - 1 - i)->code, search) == 0){
+			printf("ok2");
 			return (array + n - 1 - i);
 		}
 	}
 	return NULL;
 }
 
-// ERROR!!!
-// tìm sản phẩm theo tên
-Product * FindProductName(Product *array, int n, char* search){
-	for(int i = 0; i < n/2; i++){
+Product * FindProductName(Product *array, int n, char *search){
+	for(int i = 0; i <= n/2; i++){
 		if(strcmp((array + i)->name, search) == 0){
 			return (array + i);
 		}
@@ -107,32 +97,29 @@ Product * FindProductName(Product *array, int n, char* search){
 	return NULL;
 }
 
-// tìm sản phẩm theo giá
-// vì trong danh sách các sản phẩm có sẽ có các sản phẩm trùng giá nên cần tạo một mảng chứa các kết quả tìm được
+
 Product * FindProductPrice(Product *array, int n, float search){
 	int count = 0;
 	Product * tmpArray;
-	// vì trong danh sách các sản phẩm có sẽ có các sản phẩm trùng giá nên cần tạo một mảng chứa các kết quả tìm được
+	tmpArray = (Product *)malloc(1 * sizeof(Product));
 	
-	tmpArray = (Product *)malloc(count * sizeof(Product));
-	
-	for(int i = 0; i < n/2; i++){
-		if((array + i)->price == search){
+	for(int i = 0; i <= n/2; i++){
+		if ((i == (n - i - 1)) && ((array + i)->price == search)){
 			count++;
-			// đưa kết quả đó vào mảng tạm
 			AddElement(tmpArray, count, *(array + i));
 		}
-		else if((array + n - 1 - i)->price == search){
-			count++;
-			// đưa kết quả đó vào mảng tạm
-			AddElement(tmpArray, count, *(array + n - 1 - i));
+		else{
+			if((array + i)->price == search){
+				count++;
+				AddElement(tmpArray, count, *(array + i));
+			}
+			else if((array + n - 1 - i)->price == search){
+				count++;
+				AddElement(tmpArray, count, *(array + n - 1 - i));
+			}
 		}
 	}
 	
-	// test thử xem số sản phẩm tìm được có bằng biến count hay k;
-	printf("Tim thay %d san pham\n", sizeof(tmpArray) / sizeof(Product));
-	
-	// trả về kết quả tiềm kiếm
 	if(count <= 0){
 		free(tmpArray);
 		return NULL;
@@ -151,26 +138,17 @@ int main(){
 			printf("\nError!!!.");
 		}
 	}
-	while(n <= 0); // nhập số sản phẩm cần tạo
+	while(n <= 0);
 	
-	// tạo mảng chứa các sản phẩm
 	Product *listProduct;
-	// cấp phát ô nhớ cho mảng đó
 	listProduct = (Product *)malloc(n * sizeof(Product));
 	
-	// nhập n sản phẩm đó
 	InitListProduct(listProduct, n);
-	// hiển thị ra danh sách các sản phẩm đã nhập
-	ShowProduct(listProduct, n);
+	//ShowProduct(listProduct, n);
 	
-	if(FindProductPrice(listProduct, n, 1) == NULL){
-		printf("Khong tim thay san pham nao");
-	}
-	else{
-		printf("\nSan pham can tim: %p\n", FindProductPrice(listProduct, n, 1));
-	}
+	Product * result = FindProductName(listProduct, n, "abc");
+	printf("%s", result->code);
 	
-	// xóa bộ nhớ của mảng
 	free(listProduct);
 	return 0;
 }
