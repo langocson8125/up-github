@@ -149,6 +149,7 @@ int main(){
 	Product * result = FindProductName(listProduct, n, "abc");
 	printf("%s", result->code);
 	
+	free(result);
 	free(listProduct);
 	return 0;
 }
