@@ -79,26 +79,28 @@ void AddElement(Product *&array, int &n, Product PhanTuThem){
 	*(array + n) = PhanTuThem;
 }
 
+// ERROR!!!
 // tìm sản phẩm theo code
 Product * FindProductCode(Product *array, int n, char* search){
 	for(int i = 0; i < n/2; i++){
-		if((array + i)->code == search){
+		if(strcmp((array + i)->code, search) == 0){
 			return (array + i);
 		}
-		else if((array + n - 1 - i)->code == search){
+		else if(strcmp((array + n - 1 - i)->code, search) == 0){
 			return (array + n - 1 - i);
 		}
 	}
 	return NULL;
 }
 
+// ERROR!!!
 // tìm sản phẩm theo tên
 Product * FindProductName(Product *array, int n, char* search){
 	for(int i = 0; i < n/2; i++){
-		if((array + i)->name == search){
+		if(strcmp((array + i)->name, search) == 0){
 			return (array + i);
 		}
-		else if((array + n - 1 - i)->name == search){
+		else if(strcmp((array + n - 1 - i)->name, search) == 0){
 			return (array + n - 1 - i);
 		}
 	}
@@ -126,6 +128,9 @@ Product * FindProductPrice(Product *array, int n, float search){
 			AddElement(tmpArray, count, *(array + n - 1 - i));
 		}
 	}
+	
+	// test thử xem số sản phẩm tìm được có bằng biến count hay k;
+	printf("Tim thay %d san pham\n", sizeof(tmpArray) / sizeof(Product));
 	
 	// trả về kết quả tiềm kiếm
 	if(count <= 0){
