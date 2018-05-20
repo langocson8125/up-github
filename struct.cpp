@@ -167,7 +167,7 @@ int main(){
 		printf("Khong tim thay san pham nao");
 	}
 	else{
-		printf("San pham can tim: %p\n", FindProductPrice(listProduct, n, 1));
+		printf("\nSan pham can tim: %p\n", FindProductPrice(listProduct, n, 1));
 	}
 	
 	// xóa bộ nhớ của mảng
