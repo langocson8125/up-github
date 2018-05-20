@@ -11,6 +11,17 @@ struct Product{
 	char placeProduct[255];	
 };
 
+// declare
+Product CreateProduct();
+void ShowProduct(Product *, int);
+void InitListProduct(Product *&, int);
+void AddElement(Product *&, int, Product);
+Product * FindProductCode(Product *, int, char*);
+Product * FindProductName(Product *, int, char*);
+Product * FindProductPrice(Product *, int, float);
+int EditProductByCode(Product *&, int, char*);
+int DeleteProductByCode(Product *&, int &, char*);
+
 Product CreateProduct(){
 	Product created;
 	
@@ -94,7 +105,6 @@ Product * FindProductName(Product *array, int n, char *search){
 	}
 	return NULL;
 }
-
 
 Product * FindProductPrice(Product *array, int n, float search){
 	int count = 0;
