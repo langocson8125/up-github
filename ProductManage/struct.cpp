@@ -19,7 +19,7 @@ void InitListProduct(Product *&, int);
 void AddElement(Product *&, int, Product);
 Product * FindProductCode(Product *, int, char*);
 Product * FindProductName(Product *, int, char*);
-Product * FindProductPrice(Product *, int, float);
+Product * FindProductPrice(Product *, int, float, int&);
 int EditProductByCode(Product *&, int, char*);
 int DeleteProductByCode(Product *&, int &, char*);
 void SaveFileData(Product *, int, char*);
@@ -63,8 +63,8 @@ Product CreateProduct(){
 }
 
 void ShowProduct(Product *array, int n = 1){
-	printf("Danh sach san pham\n");
-	for(int i = 0; i < n; i++){
+	printf("List Product\n");
+	for(int i = 0; (array + i) != (array + n); i++){
 		printf("--------------------------------------------------------\n");
 		printf("Code: %s | ", (array + i)->code);
 		printf("Name: %s | ", (array + i)->name);
@@ -81,9 +81,9 @@ void InitListProduct(Product *&array, int n){
 	}	
 }
 
-void AddElement(Product *&array, int count, Product PhanTuThem){
-	realloc(array, (count + 1) * sizeof(Product *));
-	*(array + count) = PhanTuThem;
+void AddElement(Product *&tmpArray, int count, Product PhanTuThem){
+	realloc(tmpArray, count * sizeof(Product *));
+	*(tmpArray + count) = PhanTuThem;
 }
 
 Product * FindProductCode(Product *array, int n, char *search){
@@ -110,12 +110,17 @@ Product * FindProductName(Product *array, int n, char *search){
 	return NULL;
 }
 
-Product * FindProductPrice(Product *array, int n, float search){
+Product * FindProductPrice(Product *array, int n, float search, int &numProduct){
 	int count = 0;
 	Product * tmpArray;
 	tmpArray = (Product *)malloc(1 * sizeof(Product));
-	
-	for(int i = 0; i <= n/2; i++){
+	if(n % 2 == 0){
+		n = n / 2 - 1;
+	}
+	else{
+		n = n / 2;
+	}
+	for(int i = 0; i <= n; i++){
 		if ((i == (n - i - 1)) && ((array + i)->price == search)){
 			count++;
 			AddElement(tmpArray, count, *(array + i));
@@ -131,7 +136,7 @@ Product * FindProductPrice(Product *array, int n, float search){
 			}
 		}
 	}
-	
+	numProduct = count;
 	if(count <= 0){
 		free(tmpArray);
 		return NULL;
@@ -178,9 +183,9 @@ void SaveFileData(Product *array, int n, char *fileName){
 	time_t rawtime;
     struct tm * timeinfo;
 
-    time ( &rawtime );
-    timeinfo = localtime ( &rawtime );
-    fprintf(file, "%s", asctime (timeinfo) );
+    time (&rawtime);
+    timeinfo = localtime (&rawtime);
+    fprintf(file, "%s", asctime(timeinfo));
     
     // write data into file
 	for(int i = 0; i < n; i++){
@@ -202,6 +207,7 @@ void ReadFileData(Product *array, int n, char *fileName){
 
 int main(){
 	int n;
+	int numProduct = 0;
 	do{
 		printf("\nNhap so luong san pham: ");
 		scanf("%d", &n);
@@ -218,12 +224,21 @@ int main(){
 	ShowProduct(listProduct, n);
 	
 	// test sau khi xóa
-	DeleteProductByCode(listProduct, n, "1");
-	ShowProduct(listProduct, n);
-	SaveFileData(listProduct, n, "data.txt");
-	//Product * result = FindProductName(listProduct, n, "abc");
-	//printf("%s", result->code);
-	//free(result);
+	//DeleteProductByCode(listProduct, n, "2");
+	//ShowProduct(listProduct, n);
+	//SaveFileData(listProduct, n, "data.txt");
+	
+	Product *result = FindProductPrice(listProduct, n, 1, numProduct);
+	
+	if(numProduct <= 0){
+		printf("\nKhong tim thay san pham nao");
+	}
+	else{
+		printf("\nSo san pham tim duoc: %d\n", numProduct);
+		ShowProduct(result, numProduct);
+	}
+	
+	free(result);
 	free(listProduct);
 	return 0;
 }
