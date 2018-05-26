@@ -213,11 +213,29 @@ void SaveFileData(Product *array, int n, char *fileName){
 
 // hàm đọc dũ liệu từ file
 void ReadFileData(Product *array, int n, char *fileName){
-	/*
-	đọc dữ liệu từ file
-	hiển thị ra thời gian là dòng đầu tiên trong file
-	lưu danh sách các sản phẩm từ file vào mảng
-	*/
+	int BUFFER_SIZE = 1024;
+    char buffer[BUFFER_SIZE];
+    int count = 0;
+	char * str;
+	
+	FILE *file;
+	file = fopen(fileName, "r");
+	if(!file){
+		printf("\nFile not found: %s", fileName);
+		return;
+	}
+    while (!feof(file)){
+	    // mỗi str là một dòng dữ liệu trong file
+       	if(count == 0){
+       		str = fgets(buffer, BUFFER_SIZE, file);
+           	printf("Time: %s", str);
+		}
+ 		else{
+	 		str = fgets(buffer, BUFFER_SIZE, file);
+	        	printf("%s", str);
+		}
+		count++;
+    }
 }
 
 int main(){
