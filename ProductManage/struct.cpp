@@ -333,19 +333,18 @@ int main(){
 	Product *listProduct;
 	listProduct = (Product *)malloc(n * sizeof(Product));
 	
-	//InitListProduct(listProduct, n);
+	InitListProduct(listProduct, n);
 	//ShowProduct(listProduct, n);
 	
 	// test sau khi xóa
-	DeleteProductByCode(listProduct, n, "2");
-	ShowProduct(listProduct, n);
+	//DeleteProductByCode(listProduct, n, "2");
+	//ShowProduct(listProduct, n);
 	
-	SaveFileData(listProduct, n, "data.txt");
-	ReadFileData(listProduct, n, "data.txt");
+	//SaveFileData(listProduct, n, "data.txt");
+	//ReadFileData(listProduct, n, "data.txt");
 	
 	// thực hiện tìm kiếm
 	Product *result = FindProductPrice(listProduct, n, 1, numProduct);
-	ShowProduct(listProduct, n);
 	
 	if(numProduct <= 0){
 		printf("\nNo product found");
