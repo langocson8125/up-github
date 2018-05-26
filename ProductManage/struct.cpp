@@ -187,7 +187,7 @@ void SaveFileData(Product *array, int n, char *fileName){
 	FILE *file;
 	file = fopen(fileName, "w");
 	if(!file){
-		printf("\nKhong tim thay file: %s", fileName);
+		printf("\nFile not found: %s", fileName);
 		return;
 	}
 	// get system time
@@ -224,7 +224,7 @@ int main(){
 	int n;
 	int numProduct = 0;
 	do{
-		printf("\nNhap so luong san pham: ");
+		printf("\nInsert product quantity: ");
 		scanf("%d", &n);
 		if(n < 0){
 			printf("\nError!!!.");
@@ -248,10 +248,10 @@ int main(){
 	Product *result = FindProductPrice(listProduct, n, 1, numProduct);
 	
 	if(numProduct <= 0){
-		printf("\nKhong tim thay san pham nao");
+		printf("\nNo product found");
 	}
 	else{
-		printf("\nSo san pham tim duoc: %d\n", numProduct);
+		printf("\nFound product: %d\n", numProduct);
 		ShowProduct(result, numProduct);
 	}
 	
