@@ -1,4 +1,2 @@
-Sun May 20 22:34:04 2018
-Code:4|Name:4|Price:4.00|Quantity:4|Date product:4|Place product:4
-Code:5|Name:5|Price:5.00|Quantity:5|Date product:5|Place product:5
-Code:6|Name:6|Price:6.00|Quantity:6|Date product:6|Place product:6
+Sat May 26 11:47:08 2018
+a1b2c3|hackerr|123.00|456|14/02/2018|hackervn|
