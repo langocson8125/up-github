@@ -185,7 +185,7 @@ int DeleteProductByCode(Product *&array, int &n, char* code){
 // lưu sản phẩm vào file .txt
 void SaveFileData(Product *array, int n, char *fileName){
 	FILE *file;
-	file = fopen(fileName, "a");
+	file = fopen(fileName, "w");
 	if(!file){
 		printf("\nKhong tim thay file: %s", fileName);
 		return;
@@ -196,11 +196,11 @@ void SaveFileData(Product *array, int n, char *fileName){
 
     time (&rawtime);
     timeinfo = localtime (&rawtime);
+	// lưu thời gian ghi file
     fprintf(file, "%s", asctime(timeinfo));
     
     // write data into file
 	for(int i = 0; i < n; i++){
-		fprintf(file, "--------------------------------------------------------\n");
 		fprintf(file, "Code:%s|", (array + i)->code);
 		fprintf(file, "Name:%s|", (array + i)->name);
 		fprintf(file, "Price:%3.2f|", (array + i)->price);
@@ -208,12 +208,16 @@ void SaveFileData(Product *array, int n, char *fileName){
 		fprintf(file, "Date product:%s|", (array + i)->dateProduct);
 		fprintf(file, "Place product:%s\n", (array + i)->placeProduct);
 	}
-	fprintf(file, "========================================================");
 	fclose(file);
 }
 
+// hàm đọc dũ liệu từ file
 void ReadFileData(Product *array, int n, char *fileName){
-	
+	/*
+	đọc dữ liệu từ file
+	hiển thị ra thời gian là dòng đầu tiên trong file
+	lưu danh sách các sản phẩm từ file vào mảng
+	*/
 }
 
 int main(){
