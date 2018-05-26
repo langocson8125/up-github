@@ -1,2 +1,4 @@
-Sat May 26 11:47:08 2018
-a1b2c3|hackerr|123.00|456|14/02/2018|hackervn|
+Sat May 26 15:41:26 2018
+Code:1|Name:1|Price:1.00|Quantity1|Date:1|Place:1
+Code:2|Name:2|Price:2.00|Quantity2|Date:2|Place:2
+Code:3|Name:3|Price:3.00|Quantity3|Date:3|Place:3
