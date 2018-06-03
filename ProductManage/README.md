@@ -1,1 +1,2 @@
-#Damn shit!!!
+# Chương trình quản lý Sản phẩm
+## Code đã được tối ưu, các hàm có thể dùng mọi nơi,...
