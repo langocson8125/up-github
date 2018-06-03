@@ -129,5 +129,6 @@ int main(){
 		}
 	}
 	while(choise != 4);
+	free(danhSachSinhVien); // giai phong bo nho
 	return 0;
 }
