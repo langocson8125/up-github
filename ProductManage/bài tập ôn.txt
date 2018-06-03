@@ -1,0 +1,108 @@
+﻿Câu 1: Xây dựng chương trình C quản lý sinh viên như sau:
+Cấu trúc SinhVien gồm các trường:
+	HoTen: kiểu mảng ký tự
+	Tuoi: kiểu số
+	Lop: kiểu mảng ký tự
+Thực hiện các chức năng theo menu:
+1.	Chon 1 de Nhap danh sach sinh vien
+2.	Chon 2 de Hien thi danh sach sinh vien
+3.	Chon 4 de Tim kiem sinh vien theo ten ()
+4.	Chon 3 de Ket thuc
+Mời bạn chọn:
+Yêu cầu:
+-	Tối ưu về bộ nhớ 
+====================================================================================
+
+Câu 2: Xây dựng chương trình C cho phép nhập vào một số và in ra các số nguyên tố nhỏ hơn số vừa nhập. 
+Chương trình được tổ chức theo menu:
+1.	Chon 1 de Nhap so nguyen duong
+2.	Chon 2 de Hien thi cac so nguyen to su dung vong lap
+3.	Chon 4 de Hien thi cac so nguyen to su dung de quy
+4.	Chon 3 de Ket thuc
+Mời bạn chọn:
+
+====================================================================================
+
+Câu 3: Xây dựng chương trình C cho phép nhập vào một dãy số và thực hiện các chức năng theo menu sau:
+1.	Chon 1 de Nhap day so
+2.	Chon 2 de Tim phan tu lon nhat (phải dùng đệ quy)
+3.	Chon 4 de Tinh tong day (phải dùng đệ quy)
+4.	Chon 3 de Ket thuc
+Mời bạn chon:
+
+====================================================================================
+
+Câu 4: Xây dựng chương trình sau:
+	Hàm main() thực hiện công việc sau:
+Hiển thị menu nhu sau:
+1.	Chon 1 de Nhap vao mot ma tran
+2.	Chon 2 de In cac phan tu tren duong cheo chinh
+3.	Chon 3 de Ket thuc
+Mời bạn chọn:
+-	Khi người dùng chọn 1 thì gọi hàm NhapMaTran() cho phép người dùng nhập vào một ma trận vuông cấp n*n phần tử. 
+	Mỗi phần tử là một số nguyên dương
+-	Khi người dùng chọn 2 thì gọi hàm InCheoChinh() để thực hiện chức năng hiển thi các phần tử trên đường 
+	chéo chính theo định dạng dưới( giả sử ma trân 3*3):
+1	*	*
+*	10	*
+*	*	9 
+-	Chọn 3 để kết thúc chương trình.
+-	Chọn số khác thì: thông báo chọn không hợp lệ, xóa màn hình và hiển thị lại menu trên. 
+
+====================================================================================
+
+Câu 5: Xây dựng chương trình C như sau:
+	Hàm main() thực hiện công việc sau:
+Hiển thị menu nhu sau:
+1.	Chon 1 de Nhap so nguyen duong (he 10)
+2.	Chon 2 de Chuyen so vua nhap sang he 2
+3.	Chon 3 de Chuyen so vua nhap sang he 8
+4.	Chon 4 de ket thuc
+Chon:
+-	Khi người dùng chọn 1 thì gọi và thực hiện hàm NhapSo(): cho phép người dùng nhập vào một số không âm. 
+	Nếu nhập số âm thì bắt nhập lại. Sau khi nhập xong thì trở về menu trên 
+-	Khi người dùng chọn 2 thì gọi và thực hiện hàm Chuyen10To2(): cho phép chuyển số vừa nhập sang hệ 2 
+-	Khi người dùng chọn 3 thì gọi và thực hiện hàm Chuyen10To8(): cho phép chuyển số vừa nhập sang hệ 8 
+-	Khi người dùng chọn 4 thì kết thúc chương trình.
+
+====================================================================================
+
+Câu 6: Xây dựng chương trình C quản lý sách như sau:
+Cấu trúc Sach các trường:
+	MaSach: kiểu số nguyên
+	TenSach: kiểu mảng ký tự. Tối đa 100 ký tự
+	TacGia: kiểu mảng ký tư. Tối đa 100 ký tự
+	MaNXB: lưu mã số nhà xuất bản. kiểu int
+ Các hàm sau:
+	Hàm main() thực hiện công việc sau:
+Hiển thị menu nhu sau:
+1.	Chon 1 de Tao danh muc sach
+2.	Chon 2 de Hien thi cac sach trong cung nha xuat ban
+3.	Chon 3 de Ket thuc
+Chon:
+-	Khi người dùng chọn 1 thì gọi hàm TaoDanhMucSach() cho phép người dùng nhập vào một số lượng đầu sách và nhập 
+	thông tin chi tiết cho từng đầu sách cụ thể. Hai đầu sách khác nhau phải có mã sách khác nhau
+-	 Khi người dùng chọn 2 thì gọi hàm HienThiSachTrongNXB() cho phép người dùng nhập vào mã số nhà xuất bản (phải là một số nguyên dương). 
+	Hiển thị tất cả các đầu sách của cùng nhà xuất bản này. Đồng thời hiển thị số lượng đầu sách của nhà xuất bản. 
+-	Chọn 3 để kết thúc chương trình. 
+
+====================================================================================
+
+Câu 7: Xây dựng chương trình C như sau:
+	Hàm main() thực hiện công việc sau:
+Hiển thị menu nhu sau:
+1.	Chon 1 de Tinh tong ham ((x-5)*(x-5)) tu 1 den N
+2.	Chon 2 de Tinh tong ham cos(x)2 tu 1 den N
+3.	Chon 3 de Tinh tong ham sin(x)2 tu 1 den N
+4.	Chon 4 de Ket thuc
+Chon:
+-	Khi người dùng chọn 1 thì thực hiện chức năng: nhập vào số nguyên n. 
+	Tính tổng S = (1-5)*(1-5) + 2*2 + 3*3 +…+ n*n. Sử dụng đệ quy để tính. 
+	Thực hiện xong, chờ người dùng nhấn một phím bất kỳ để trở về menu chính
+-	Khi người dùng chọn 2 thì thực hiện chức năng: nhập vào số nguyên n. 
+	Tính tổng S = cos(1)*cos(1) + cos(2)*cos(2) + cos(3)*cos(3) +…+ cos(n)*cos(n). 
+	Sử dụng cấu trúc lặp for để tính. Thực hiện xong, chờ người dùng nhấn một phím bất kỳ để trở về menu chính
+-	Khi người dùng chọn 3 thì thực hiện chức năng: nhập vào số nguyên n. 
+	Tính tổng S = sin(1)*sin(1) + sin(2)*sin(2) + sin(3)*sin(3) +…+ sin(n)*sin(n). 
+	Sử dụng đệ quy để tính. Thực hiện xong, chờ người dùng nhấn một phím bất kỳ để trở về menu chính  
+-	Chọn 4 để kết thúc chương trình.
