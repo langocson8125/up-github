@@ -319,6 +319,7 @@ void ReadFileData(Product *&array, int n, char *fileName){
 // hàm chạy chính
 int main(){
 	printf("..:: PRODUCT MANAGER ::..");
+	// nhập số sản phẩm cần khởi tạo
 	int n;
 	int numProduct = 0;
 	do{
@@ -330,22 +331,26 @@ int main(){
 	}
 	while(n <= 0);
 	
+	// khởi tạo danh sách sản phẩm
 	Product *listProduct;
+	// cấp phát hô nhớ để chứa danh sách các sản phẩm
 	listProduct = (Product *)malloc(n * sizeof(Product));
-	
 	InitListProduct(listProduct, n);
-	//ShowProduct(listProduct, n);
+	// hiển thị danh sách sau khi tạo
+	ShowProduct(listProduct, n);
 	
-	// test sau khi xóa
+	// test xóa
 	//DeleteProductByCode(listProduct, n, "2");
 	//ShowProduct(listProduct, n);
 	
+	// test ghi ra file, đọc từ file
 	//SaveFileData(listProduct, n, "data.txt");
 	//ReadFileData(listProduct, n, "data.txt");
 	
 	// thực hiện tìm kiếm
 	Product *result = FindProductPrice(listProduct, n, 1, numProduct);
 	
+	// kết quả tìm kiếm
 	if(numProduct <= 0){
 		printf("\nNo product found");
 	}
