@@ -1,4 +1,4 @@
-﻿Câu 1: Xây dựng chương trình C quản lý sinh viên như sau:
+Câu 1: Xây dựng chương trình C quản lý sinh viên như sau:
 Cấu trúc SinhVien gồm các trường:
 	HoTen: kiểu mảng ký tự
 	Tuoi: kiểu số
@@ -6,10 +6,11 @@ Cấu trúc SinhVien gồm các trường:
 Thực hiện các chức năng theo menu:
 1.	Chon 1 de Nhap danh sach sinh vien
 2.	Chon 2 de Hien thi danh sach sinh vien
-3.	Chon 4 de Tim kiem sinh vien theo ten ()
-4.	Chon 3 de Ket thuc
+3.	Chon 3 de Tim kiem sinh vien theo ten ()
+4.	Chon 4 de Ket thuc
 Mời bạn chọn:
 Yêu cầu:
+-	Chọn số khác thì: thông báo chọn không hợp lệ, xóa màn hình và hiển thị lại menu trên. 
 -	Tối ưu về bộ nhớ 
 ====================================================================================
 
