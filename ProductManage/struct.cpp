@@ -4,34 +4,33 @@
 #include "time.h"
 #include "ctype.h"
 
-// thiết lập cấu trúc của sản phẩm
 struct Product{
-	char code[11]; // mã sản phẩm
-	char name[255]; // tên sản phẩm
-	float price; // giá sản phẩm
-	int quantity; // số lượng của sản phẩm đang nhập
-	char dateProduct[11]; // ngày sản xuất
-	char placeProduct[255];	// nơi sản xuất
+	char code[11];
+	char name[255];
+	float price;
+	int quantity;
+	char dateProduct[11];
+	char placeProduct[255];	
 };
 
-// khai báo các hàm để thao tác với sản phẩm
+// declare
 Product CreateProduct();
 void ShowProduct(Product *, int);
 void InitListProduct(Product *&, int);
 void AddElement(Product *&, int, Product);
+void DeleteElement(Product *&, int &, int);
 Product * FindProductCode(Product *, int, char*);
 Product * FindProductName(Product *, int, char*);
 Product * FindProductPrice(Product *, int, float, int&);
 int EditProductByCode(Product *&, int, char*);
 int DeleteProductByCode(Product *&, int &, char*);
+int DeleteProductByPrice(Product *&, int &, float);
 void InsertChar(char *, int, int, char *);
 float InsertNum(char *, int, int);
 void SaveFileData(Product *, int, char*);
 void ReadFileData(Product *&, int, char*);
 
-// chi tiết các hàm thao tác với sản phẩm
-
-// hàm tạo sản phẩm,  trả về sản phẩm sau khi tạo
+// detail
 Product CreateProduct(){
 	Product created;
 	
@@ -65,14 +64,12 @@ Product CreateProduct(){
 	gets(created.dateProduct);
 	printf("Place product:");
 	gets(created.placeProduct);
-	
 	return created;
 }
 
-// hàm hiển thị các sản phẩm
-void ShowProduct(Product *array, int n = 1){
+void ShowProduct(Product *array, int n){
 	printf("List Product\n");
-	for(int i = 0; (array + i) != (array + n); i++){
+	for(int i = 0; i < n; i++){
 		printf("--------------------------------------------------------\n");
 		printf("Code: %s | ", (array + i)->code);
 		printf("Name: %s | ", (array + i)->name);
@@ -83,20 +80,25 @@ void ShowProduct(Product *array, int n = 1){
 	}	
 }
 
-// hàm khởi tạo danh sách các sản phẩm
 void InitListProduct(Product *&array, int n){
 	for(int i = 0; i < n; i++){
 		*(array + i) = CreateProduct();
 	}	
 }
 
-// hàm thêm sản phẩm vào danh sách (đang bị lỗi)
-void AddElement(Product *&Array, int count, Product PhanTuThem){
+void AddElement(Product *&Array, int count, Product element){
 	realloc(Array, count * sizeof(Product *));
-	*(Array + count) = PhanTuThem;
+	*(Array + count - 1) = element;
 }
 
-// hàm tìm sản phẩm dựa vào mã sản phẩm
+void DeleteElement(Product *&Array, int &n, int position){
+	for(int i = 0; (Array + position + i) != (Array + n - 1); i++){
+		*(Array + position + i) = *(Array + position + i + 1);
+	}
+	n--; 
+	//realloc(Array, n * sizeof(Product *)); // CHUA FIX DUOC
+}
+
 Product * FindProductCode(Product *array, int n, char *search){
 	for(int i = 0; i <= n/2; i++){	
 		if(strcmp((array + i)->code, search) == 0){
@@ -109,7 +111,6 @@ Product * FindProductCode(Product *array, int n, char *search){
 	return NULL;
 }
 
-// hàm tìm sản phẩm dựa vào tên sản phẩm
 Product * FindProductName(Product *array, int n, char *search){
 	for(int i = 0; i <= n/2; i++){
 		if(strcmp((array + i)->name, search) == 0){
@@ -122,32 +123,14 @@ Product * FindProductName(Product *array, int n, char *search){
 	return NULL;
 }
 
-// hàm tìm sản phẩm dựa vào giá sản phẩm
-// có nhiều sản phẩm đồng giá nên sẽ trả về con trỏ đầu của mảng chứa các sản phẩm đồng giá đó
 Product * FindProductPrice(Product *array, int n, float search, int &numProduct){
 	int count = 0;
 	Product * tmpArray;
 	tmpArray = (Product *)malloc(1 * sizeof(Product));
-	if(n % 2 == 0){
-		n = n / 2 - 1;
-	}
-	else{
-		n = n / 2;
-	}
-	for(int i = 0; i <= n; i++){
-		if ((i == (n - i - 1)) && ((array + i)->price == search)){
+	for(int i = 0; i < n; i++){
+		if ((array + i)->price == search){
 			count++;
 			AddElement(tmpArray, count, *(array + i));
-		}
-		else{
-			if((array + i)->price == search){
-				count++;
-				AddElement(tmpArray, count, *(array + i));
-			}
-			else if((array + n - 1 - i)->price == search){
-				count++;
-				AddElement(tmpArray, count, *(array + n - 1 - i));
-			}
 		}
 	}
 	numProduct = count;
@@ -160,7 +143,6 @@ Product * FindProductPrice(Product *array, int n, float search, int &numProduct)
 	}
 }
 
-// hàm sửa sản phẩm dựa vào mã sản phẩm
 int EditProductByCode(Product *&array, int n, char* code){
 	Product * tmpPointer = FindProductCode(array, n, code);
 	if(tmpPointer == NULL){
@@ -172,23 +154,35 @@ int EditProductByCode(Product *&array, int n, char* code){
 	}
 }
 
-// hàm xóa sản phẩm dựa vào mã sản phẩm
 int DeleteProductByCode(Product *&array, int &n, char* code){
 	Product * tmpPointer = FindProductCode(array, n, code);
 	if(tmpPointer == NULL){
 		return 0;
 	}
 	else{
-		for(int i = 0; (array + i) != (array + n - 1); i++){
-			*(array + i) = *(array + i + 1);
+		for(int i = 0; (tmpPointer + i) != (tmpPointer + n - 1); i++){
+			*(tmpPointer + i) = *(tmpPointer + i + 1);
 		}
 		n--; 
-		realloc(array, n * sizeof(Product *)); 
+		//realloc(array, n * sizeof(Product *)); // CHUA FIX DUOC
 		return 1;
 	}
 }
 
-// hàm thêm chuỗi(dùng cho hàm đọc file)
+int DeleteProductByPrice(Product *&array, int &n, float search){
+	int count = 0;
+	for(int i = 0; i < n; ){
+		if ((array + i)->price == search){
+			printf("i = %d - n = %d\n", i, n);
+			count++;
+			DeleteElement(array, n, i);
+			i=0;
+		}
+		else i++;
+	}
+	return count;
+}
+	
 void InsertChar(char *str, int x, int y, char *e_str){
 	int tmp = 0;
 	for (int i = x; i < y; i++){
@@ -198,7 +192,6 @@ void InsertChar(char *str, int x, int y, char *e_str){
 	e_str[tmp] = '\0';
 }
 
-// hàm thêm số(dùng cho hàm đọc file)
 float InsertNum(char *str, int x, int y){
 	int p_dot = 0;
 	float num = 0, div = 1;
@@ -223,7 +216,6 @@ float InsertNum(char *str, int x, int y){
 	return num;
 }
 
-// hàm lưu danh sách các sản phẩm vào file
 void SaveFileData(Product *array, int n, char *fileName){
 	FILE *file;
 	file = fopen(fileName, "w");
@@ -251,7 +243,6 @@ void SaveFileData(Product *array, int n, char *fileName){
 	fclose(file);
 }
 
-// hàm đọc các sản phẩm từ file rồi đưa vào mảng 
 void ReadFileData(Product *&array, int n, char *fileName){
 	int BUFFER_SIZE = 1024;
     char buffer[BUFFER_SIZE];
@@ -316,10 +307,8 @@ void ReadFileData(Product *&array, int n, char *fileName){
 	}	    
 }
 
-// hàm chạy chính
 int main(){
 	printf("..:: PRODUCT MANAGER ::..");
-	// nhập số sản phẩm cần khởi tạo
 	int n;
 	int numProduct = 0;
 	do{
@@ -331,26 +320,23 @@ int main(){
 	}
 	while(n <= 0);
 	
-	// khởi tạo danh sách sản phẩm
 	Product *listProduct;
-	// cấp phát hô nhớ để chứa danh sách các sản phẩm
 	listProduct = (Product *)malloc(n * sizeof(Product));
+	
 	InitListProduct(listProduct, n);
-	// hiển thị danh sách sau khi tạo
 	ShowProduct(listProduct, n);
 	
-	// test xóa
+	// Test Delete
 	//DeleteProductByCode(listProduct, n, "2");
+	//DeleteProductByPrice(listProduct, n, 1);
 	//ShowProduct(listProduct, n);
 	
-	// test ghi ra file, đọc từ file
 	//SaveFileData(listProduct, n, "data.txt");
 	//ReadFileData(listProduct, n, "data.txt");
 	
-	// thực hiện tìm kiếm
+	// Test Search
 	Product *result = FindProductPrice(listProduct, n, 1, numProduct);
 	
-	// kết quả tìm kiếm
 	if(numProduct <= 0){
 		printf("\nNo product found");
 	}
@@ -359,7 +345,7 @@ int main(){
 		ShowProduct(result, numProduct);
 	}
 	
-	// giải phóng ô nhớ
+	// giai phong o nho
 	free(result);
 	free(listProduct);
 	return 0;
