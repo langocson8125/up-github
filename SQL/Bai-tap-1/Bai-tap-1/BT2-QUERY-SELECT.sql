@@ -145,15 +145,16 @@ AND N.TENNUOC = 'CAMPUCHIA'
 GROUP BY T.TENTINH
 HAVING COUNT(L.LG) >= 3;
 
--- 27) Cho biết tên những tỉnh giáp với các tỉnh ở miền Trung và không phải là miền Trung. (chưa làm xong)
-SELECT T.TENTINH
+-- 27) Cho biết tên những tỉnh giáp với các tỉnh ở miền Trung và không phải là miền Trung.
+SELECT DISTINCT T.TENTINH
 FROM TINH AS T, LANGGIENG AS L
-WHERE T.MATINH = L.LG
-AND L.LG IN (SELECT T.MATINH
-FROM TINH AS T, MIEN AS M
-WHERE T.MAMIEN = M.MAMIEN
-AND M.TENMIEN = 'TRUNG')
-AND T.MAMIEN <> 'T';
+WHERE T.MATINH = L.MATINH
+AND L.LG IN (SELECT MATINH
+			FROM TINH
+			WHERE MAMIEN = 'T')
+AND T.MATINH NOT IN (SELECT MATINH
+			FROM TINH
+			WHERE MAMIEN = 'T');
 
 --	28) Trích ra danh sách những tỉnh giáp với TPHCM nhƣng không giáp với Campuchia
 SELECT DISTINCT T.TENTINH
