@@ -1,4 +1,4 @@
-﻿-- 1) Xuất ra tên tỉnh cùng với dân số của các tỉnh có diện tích >= 5,000 Km2
+-- 1) Xuất ra tên tỉnh cùng với dân số của các tỉnh có diện tích >= 5,000 Km2
 SELECT TENTINH, DANSO 
 FROM TINH
 WHERE DIENTICH >= 5000;
@@ -97,7 +97,7 @@ SELECT TENTINH, MAMIEN
 FROM TINH
 ORDER BY MAMIEN, TENTINH;
 
--- 20) Cho biết tên những tỉnh, TP có nhiều láng giềng nhất (chưa làm xong)
+-- 20) Cho biết tên những tỉnh, TP có nhiều láng giềng nhất
 SELECT T.TENTINH, COUNT(L.LG) AS SO_LANG_GIENG
 FROM TINH AS T, LANGGIENG AS L
 WHERE T.MATINH = L.MATINH
@@ -145,7 +145,7 @@ AND N.TENNUOC = 'CAMPUCHIA'
 GROUP BY T.TENTINH
 HAVING COUNT(L.LG) >= 3;
 
--- 27) Cho biết tên những tỉnh giáp với các tỉnh ở miền Trung và không phải là miền Trung.
+-- 27) Cho biết tên những tỉnh giáp với các tỉnh ở miền Trung và không phải là miền Trung. (chưa làm xong)
 SELECT DISTINCT T.TENTINH
 FROM TINH AS T, LANGGIENG AS L
 WHERE T.MATINH = L.MATINH
@@ -158,10 +158,10 @@ AND T.MATINH NOT IN (SELECT MATINH
 
 --	28) Trích ra danh sách những tỉnh giáp với TPHCM nhƣng không giáp với Campuchia
 SELECT DISTINCT T.TENTINH
-FROM TINH AS T, LANGGIENG AS L, BIENGIOI AS B
+FROM TINH AS T, LANGGIENG AS L
 WHERE T.MATINH = L.MATINH
 AND L.LG = 'SG'
-AND B.MANUOC <> 'CPC';
+AND T.MATINH NOT IN (SELECT MATINH FROM BIENGIOI WHERE MANUOC= 'CPC');
 
 -- 29) Cho biết từ TPHCM có thể đi đến những tỉnh nào thông qua 1 tỉnh khác
 
