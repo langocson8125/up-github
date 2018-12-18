@@ -1,11 +1,13 @@
 package Homework02.Sach;
 
+import java.io.Serializable;
+
 /*
  * Bài 2
  * Class con Sách Giáo Khoa
  */
 
-public class SachGiaoKhoa extends Sach {
+public class SachGiaoKhoa extends Sach implements Serializable{
 	private String tinhTrang;
 	
 	public SachGiaoKhoa() {
@@ -40,5 +42,10 @@ public class SachGiaoKhoa extends Sach {
 		return "SachGiaoKhoa [tinhTrang=" + this.tinhTrang + ", getMaSach()=" + this.getMaSach() + ", getNgayNhap()="
 				+ this.getNgayNhap() + ", getDonGia()=" + this.getDonGia() + ", getSoLuong()=" + this.getSoLuong()
 				+ ", getNhaXuatBan()=" + this.getNhaXuatBan() + ", getThanhTien()=" + this.getThanhTien() + "]";
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return this.getMaSach().equalsIgnoreCase(((SachGiaoKhoa)obj).getMaSach());
 	}
 }
