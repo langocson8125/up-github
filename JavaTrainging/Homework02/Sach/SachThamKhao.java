@@ -1,11 +1,15 @@
 package Homework02.Sach;
 
+import java.io.Serializable;
+
+import Homework02.TienDien.HoaDonTienDienVietNam;
+
 /*
  * Bài 2
  * Class con Sách Tham Khảo
  */
 
-public class SachThamKhao extends Sach {
+public class SachThamKhao extends Sach implements Serializable{
 	private float thue;
 	
 	public SachThamKhao() {
@@ -33,6 +37,11 @@ public class SachThamKhao extends Sach {
 
 	public void setThue(float thue) {
 		this.thue = thue;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return this.getMaSach().equalsIgnoreCase(((SachThamKhao)obj).getMaSach());
 	}
 	
 }
