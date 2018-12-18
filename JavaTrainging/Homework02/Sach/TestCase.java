@@ -9,6 +9,9 @@ public class TestCase {
 		// Nhâp SGK vào
 		TQLS.NhapSachGiaoKhoa();
 		
+		// xóa SGK có mã sách là a1
+		
+		TQLS.xoaSachGiaoKhoa("a1");
 		// Xuất ra danh sách SGK
 		System.out.println("Danh sach SGK");
 		TQLS.XuatSachGiaoKhoa();
