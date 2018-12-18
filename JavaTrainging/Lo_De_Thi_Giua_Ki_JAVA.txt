@@ -25,6 +25,7 @@ phương thức xuất danh sách. Khi danh sách đầy thì tự động tăng
 hiện tính đa hình – polymorphism bằng cách cho phép lựa chọn nhập thông tin là sinh viên, nhân
 viên hay khách hàng). 
 
+-----------------------------------------------------------------------------------------
 2. Lớp Thông tin con người: bao gồm các thuộc tính tên, địa chỉ và các phương thức nhập
 tên, nhâp địa chỉ.
  Các lớp Sinh viên, Nhân viên, Khách hàng (mô tả dưới đây) thừa kế lớp Thô g ti co gười.
@@ -41,3 +42,31 @@ hóa đơn.
  Hãy định nghĩa các lớp trên và lớp Hiển thị thông tin. Lớp Hiển thị thông tin cho phép khai báo
 đối tượng thuộc lớp Thô g ti co gười, thể hiện tính đa hình (polymorphism) bằng cách cho
 phép lựa chọn nhập thông tin là sinh viên, nhân viên hay khách hàng
+
+------------------------------------------------------------------------------------------
+3.Hàng hóa quản lý trong kho của một siêu thị gồm có hàng thực phẩm, hàng sành sứ và hàng
+điện máy.
+Mỗi loại hàng đều có mã hàng (không được sửa, không được để trống), tên hàng (không được rỗng), số
+lượng tồn (>=0), đơn giá (>0).
+Hàng thực phẩm thì cần quan tâm đến thông tin ngày sản xuất, ngày hết hạn (ngày hết hạn phải sau
+hoặc là ngày sản xuất) và nhà cung cấp.
+Hàng điện máy cần biết thời gian bảo hành bao nhiêu tháng (>=0), công suất bao nhiêu KW (>0).
+Hàng sành sứ thì cần biết thông tin về nhà sản xuất và ngày nhập kho.
+Ngoài ra, người quản lý cần quan tâm đến số lượng tồn kho và các yếu tố khác của từng loại hàng hóa
+để đánh giá mức độ bán buôn, tiền VAT từng loại hàng hóa. Biết rằng VAT của hàng điện máy và sành
+sứ là 10%, VAT của hàng thực phẩm là 5%.
+Dùng java IDE, tạo một project. Thực hiện cài đặt tường minh cho mỗi loại hàng cụ thể trên. Trong
+đó, để đánh giá mức độ bán buôn thì:
+o Hàng điện máy, nếu số lượng tồn kho <3 thì được đánh giá là bán được.
+o Hàng thực phẩm, nếu vẫn còn tồn kho và bị hết hạn thì đánh giá là khó bán.
+o Hàng sành sứ, nếu số lượng tồn kho >50 và thời gian lưu kho >10 ngày thì đánh giá là bán
+chậm.
+o Các trường hợp còn lại xem như không đánh giá.
+- Hãy viết lớp quản lý danh sách hàng hóa. Dùng Array để lưu trữ danh sách hàng hóa.
+o Tạo constructor khởi tạo danh sách.
+o Viết phương thức thêm một hàng hóa vào danh sách (thêm thành công nếu không bị trùng
+mã hàng, thể hiện tính đa hình – polymorphism bằng cách cho phép lựa chọn nhập thông
+tin)
+o Viết phương thức in toàn bộ danh sách các hàng hóa.
+- Tạo lớp cho phần thử nghiệm, với menu lựa chọn để thực hiện các chức năng theo yêu cầu.
+
