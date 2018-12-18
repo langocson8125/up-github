@@ -1,0 +1,43 @@
+1.(Yêu cầu chung: ác định access modifier (private, protected, public) cho từng thuộc tính/
+phương thức mỗi lớp, cài đặt getter/setter, cài đặt constructor mặc định và constructor có thông số
+đầy đủ).
+Giả sử cần xây dựng chương trình quản lý dùng cho một học viện nghiên cứu giảng dạy và ứng dụng.
+Đối tượng quản lý bao gồm các sinh viên đang theo học, các nhân viên đang làm việc tại học viện, các
+khách hàng đến giao dịch mua bán sản phẩm ứng dụng. Dựa vào một số đặt tính của từng đối tượng,
+người quản lý cần đưa ra cách thức đánh giá khác nhau.
+Vậy hãy xây dựng các lớp sau:
+- Lớp Person: bao gồm các thuộc tính họ tên, địa chỉ, phương thức toString.
+- Các lớp Student, Employee, Customer (mô tả dưới đây) thừa kế lớp Person.
+o Lớp Student: bao gồm các thuộc tính điểm môn học 1, điểm môn học 2, và các phương
+thức: tính điểm TB, đánh giá, overriding phương thức toString trả về bảng điểm sinh viên
+(gồm thông tin thuộc tính và điểm TB).
+o Lớp Employee: bao gồm thuộc tính heSoLương, và các phương thức: tính lương, đánh giá,
+overriding phương thức toString trả về bảng lương cho nhân viên (gồm thông tin thuộc tính
+đối tượng và tiền lương).
+o Lớp Customer: bao gồm thuộc tính tên công ty, trị giá hóa đơn, đánh giá, và phương thức
+toString trả về thông tin hóa đơn cho khách hàng (gồm các thuộc tính của đối tượng).
+- Lớp Quản Lý có 1 biến danh sách để lưu các sinh viên, nhân viên, khách hàng (dùng 1 biến array
+Person), biến lưu tổng số người có trong danh sách, constructor mặc định khởi tạo array với dung
+lượng cho trước, phương thức thêm một người vào danh sách (thông số Person), xóa 1 người khỏi
+danh sách (nhận thông số là họ tên của người cần xóa), sắp xếp danh sách theo thứ tự họ tên,
+phương thức xuất danh sách. Khi danh sách đầy thì tự động tăng dung lượng dãy lên 50%.
+- Viết lớp với phương thức main cho phần kiểm nghiệm. Giao tiếp với người dùng bằng menu (thể
+hiện tính đa hình – polymorphism bằng cách cho phép lựa chọn nhập thông tin là sinh viên, nhân
+viên hay khách hàng). 
+
+2. Lớp Thông tin con người: bao gồm các thuộc tính tên, địa chỉ và các phương thức nhập
+tên, nhâp địa chỉ.
+ Các lớp Sinh viên, Nhân viên, Khách hàng (mô tả dưới đây) thừa kế lớp Thô g ti co gười.
+ Lớp Sinh viên: bao gồm các thuộc tính điểm môn học 1, điểm môn học 2, và các phương thức
+nhập điểm, tính tổng điểm, phương thức thay đổi thông tin của sinh viên truyền vào tham số là
+sinh viên (truyền tham biến ) , phương thức cho phép lựa chọn cách thay đổi – 0: thay đổi điểm
+môn 1, -1 thay đổi điểm môn 2, điểm các môn được nhập từ bàn phím.
+ Lớp Nhân viên: bao gồm các thuộc tính lương, chức vụ, và các phương thức nhập chức vụ, tính
+lương, phương thức thay đổi thông tin của nhân viên truyền vào tham số là nhân viên, phương
+thức cho phép lựa chọn cách thay đổi – 0: thay đổi lương, -1 thay đổi chức vụ, các thông tin được
+nhập từ bàn phím.
+ Lớp Khách hàng: bao gồm các thuộc tính kiểu xe bán, và các phương thức nhập kiểu xe, xuất
+hóa đơn.
+ Hãy định nghĩa các lớp trên và lớp Hiển thị thông tin. Lớp Hiển thị thông tin cho phép khai báo
+đối tượng thuộc lớp Thô g ti co gười, thể hiện tính đa hình (polymorphism) bằng cách cho
+phép lựa chọn nhập thông tin là sinh viên, nhân viên hay khách hàng
