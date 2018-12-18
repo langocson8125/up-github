@@ -2,6 +2,8 @@ package Homework02.Sach;
 
 import java.util.*;
 
+import Homework02.TienDien.HoaDonTienDienVietNam;
+
 /*
  * Bài 2
  * Trình quản lý sách
@@ -67,6 +69,7 @@ public class TrinhQuanLySach {
 		String nhaXuatBan;
 		System.out.println("Nhap nha xuat ban :");
 		nhaXuatBan = sc.nextLine();
+		sc.nextLine();
 		
 		float thue;
 		System.out.println("Nhap thua:");
@@ -75,16 +78,37 @@ public class TrinhQuanLySach {
 		return new SachThamKhao(maSach, ngayNhapSach, donGia, soLuong, nhaXuatBan, thue);
 	}
 	
+	public boolean KiemTraTonTaiSachGiaoKhoa(SachGiaoKhoa obj) {
+		if(listSachGiaoKhoa.contains(obj))
+			return false;
+		else 
+			listSachGiaoKhoa.add(obj);
+		return true;
+	}
+	
+	public boolean KiemTraTonTaiSachThamKhao(SachThamKhao obj) {
+		if(listSachThamKhao.contains(obj))
+			return false;
+		else 
+			listSachThamKhao.add(obj);
+		return true;
+	}
+	
 	public void NhapSachGiaoKhoa() {
 		Scanner sc = new Scanner(System.in);
 		String choice;
 		do {
 			SachGiaoKhoa sachGiaoKhoa = this.initSachGiaoKhoa();
 			
-			this.listSachGiaoKhoa.add(sachGiaoKhoa);
-			
-			System.out.println("Co muon nhap tiep(Y/N):");
-			choice = sc.next();
+			if(this.KiemTraTonTaiSachGiaoKhoa(sachGiaoKhoa) == false) {
+				System.out.println("Cuon sach nay da ton tai");
+				System.out.println("Co muon nhap lai(Y/N):");
+				choice = sc.next();
+			}
+			else {
+				System.out.println("Co muon nhap tiep(Y/N):");
+				choice = sc.next();
+			}
 		}
 		while(choice.equals("Y"));
 	}
@@ -95,12 +119,57 @@ public class TrinhQuanLySach {
 		do {
 			SachThamKhao sachThamKhao = this.initSachThamKhao();
 			
-			this.listSachThamKhao.add(sachThamKhao);
-			
-			System.out.println("Co muon nhap tiep(Y/N):");
-			choice = sc.next();
+			if(this.KiemTraTonTaiSachThamKhao(sachThamKhao) == false) {
+				System.out.println("Cuon sach nay da ton tai");
+				System.out.println("Co muon nhap lai(Y/N):");
+				choice = sc.next();
+			}
+			else {
+				System.out.println("Co muon nhap tiep(Y/N):");
+				choice = sc.next();
+			}
 		}
 		while(choice.equals("Y"));
+	}
+	
+	public SachGiaoKhoa timSachGiaoKhoa(String maSach) {
+        for (SachGiaoKhoa sachGK :  this.listSachGiaoKhoa) {
+        	if(sachGK.getMaSach().equals(maSach)) {
+        		return sachGK;
+        	}
+        }
+        return null;
+	}
+	
+	public boolean xoaSachGiaoKhoa(String maSach) {
+		SachGiaoKhoa sachCanXoa = this.timSachGiaoKhoa(maSach);
+		if(sachCanXoa != null) {
+			if(this.listSachGiaoKhoa.remove(sachCanXoa) == true) {
+				return true;
+			}
+			return false;
+		}
+		return false;
+	}
+	
+	public SachThamKhao timSachThamKhao(String maSach) {
+        for (SachThamKhao sachTK :  this.listSachThamKhao) {
+        	if(sachTK.getMaSach().equals(maSach)) {
+        		return sachTK;
+        	}
+        }
+        return null;
+	}
+	
+	public boolean xoaSachThamKhao(String maSach) {
+		SachThamKhao sachCanXoa = this.timSachThamKhao(maSach);
+		if(sachCanXoa != null) {
+			if(this.listSachThamKhao.remove(sachCanXoa) == true) {
+				return true;
+			}
+			return false;
+		}
+		return false;
 	}
 	
 	public void XuatSachGiaoKhoa() {
