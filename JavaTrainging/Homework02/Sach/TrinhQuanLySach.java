@@ -103,12 +103,11 @@ public class TrinhQuanLySach {
 			if(this.KiemTraTonTaiSachGiaoKhoa(sachGiaoKhoa) == false) {
 				System.out.println("Cuon sach nay da ton tai");
 				System.out.println("Co muon nhap lai(Y/N):");
-				choice = sc.next();
 			}
 			else {
 				System.out.println("Co muon nhap tiep(Y/N):");
-				choice = sc.next();
 			}
+			choice = sc.next();
 		}
 		while(choice.equals("Y"));
 	}
@@ -122,12 +121,11 @@ public class TrinhQuanLySach {
 			if(this.KiemTraTonTaiSachThamKhao(sachThamKhao) == false) {
 				System.out.println("Cuon sach nay da ton tai");
 				System.out.println("Co muon nhap lai(Y/N):");
-				choice = sc.next();
 			}
 			else {
 				System.out.println("Co muon nhap tiep(Y/N):");
-				choice = sc.next();
 			}
+			choice = sc.next();
 		}
 		while(choice.equals("Y"));
 	}
@@ -143,11 +141,8 @@ public class TrinhQuanLySach {
 	
 	public boolean xoaSachGiaoKhoa(String maSach) {
 		SachGiaoKhoa sachCanXoa = this.timSachGiaoKhoa(maSach);
-		if(sachCanXoa != null) {
-			if(this.listSachGiaoKhoa.remove(sachCanXoa) == true) {
-				return true;
-			}
-			return false;
+		if(sachCanXoa != null && this.listSachGiaoKhoa.remove(sachCanXoa)) {
+			return true;
 		}
 		return false;
 	}
@@ -163,11 +158,8 @@ public class TrinhQuanLySach {
 	
 	public boolean xoaSachThamKhao(String maSach) {
 		SachThamKhao sachCanXoa = this.timSachThamKhao(maSach);
-		if(sachCanXoa != null) {
-			if(this.listSachThamKhao.remove(sachCanXoa) == true) {
-				return true;
-			}
-			return false;
+		if(sachCanXoa != null && this.listSachThamKhao.remove(sachCanXoa)) {
+			return true;
 		}
 		return false;
 	}
