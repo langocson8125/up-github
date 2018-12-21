@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import Homework02.TienDien.HoaDonTienDienNuocNgoai;
 
-public class CauThu implements Serializable {
+public class CauThu {
 	private int id;
 	private String ten;
 	private int namSinh;
@@ -59,11 +59,5 @@ public class CauThu implements Serializable {
 	@Override
 	public String toString() {
 		return "id=" + this.id + ", ten=" + this.ten + ", namSinh=" + this.namSinh + ", viTri=" + this.viTri;
-	}
-	
-
-	@Override
-	public boolean equals(Object obj) {
-		return Integer.toString(this.getId()).equalsIgnoreCase(Integer.toString(((CauThu)obj).getId()));
 	}
 }
