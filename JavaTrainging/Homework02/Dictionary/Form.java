@@ -131,7 +131,7 @@ public class Form extends JFrame {
 				String search = tf_search.getText();
 				String newMean = tf_newMean.getText();
 				int newID = myDict.getListWord().size();
-				myDict.addWord(new Word(newID, search, newMean));
+				myDict.addWord(myDict.initWord(newID, search, newMean));
 				
 				// message
 				JOptionPane.showMessageDialog(null, "Thêm thành công","Thông báo", JOptionPane.INFORMATION_MESSAGE);
