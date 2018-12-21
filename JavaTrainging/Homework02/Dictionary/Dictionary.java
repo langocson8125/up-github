@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import Homework01.SinhVien2;
+
 
 public class Dictionary {
 	private List<Word> listWord;
