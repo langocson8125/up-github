@@ -1,9 +1,5 @@
 package GiaiDe02;
 
-import java.io.Serializable;
-
-import Homework02.TienDien.HoaDonTienDienNuocNgoai;
-
 public class CauThu {
 	private int id;
 	private String ten;
