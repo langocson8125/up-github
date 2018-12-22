@@ -1,4 +1,4 @@
-package GiaiDe4;
+package GiaiDe4; // nhớ chỉnh lại tên package cho phù hợp nhé :)
 
 import java.io.FileWriter;
 import java.io.IOException;
