@@ -141,8 +141,8 @@ public class Form extends JFrame {
 				tf_newMean.setText(null);
 				tf_search.setText(null);
 				tf_newMean.setVisible(false);
-		lbl_nghiaMoi.setVisible(false);
-		btn_add.setVisible(false);
+				lbl_nghiaMoi.setVisible(false);
+				btn_add.setVisible(false);
 			}
 		});
 		
