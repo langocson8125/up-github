@@ -35,7 +35,7 @@ public class Dictionary {
 	private int findWordIndex(String en) {
 		// create a comparator
 		Comparator<Word> cm = new Comparator<Word>() {
-			@Override
+		    @Override
 		    public int compare(Word w1, Word w2) {
 		        return w1.getEn().compareTo(w2.getEn());
 		    }
