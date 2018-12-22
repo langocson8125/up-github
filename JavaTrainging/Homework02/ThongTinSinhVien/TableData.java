@@ -50,6 +50,13 @@ public class TableData extends JFrame {
 		contentPane.setLayout(null);
 		
 		DefaultTableModel model = new DefaultTableModel();
+		
+		/*
+		 * ERROR
+		 * phần tên cột này có vấn đề
+		 * thêm tên cột vào rồi mà ko hiện ra tên cột, chỉ hiện ra dữ liệu
+		 * còn lại vẫn chạy bình thường
+		 */
 		ArrayList<String> arrCols= new ArrayList<String>();
 		arrCols.add("Mã Sinh Vien");
 		arrCols.add("Họ Tên");
